@@ -1,4 +1,5 @@
 
+import static contents.Constants.*;
 import static contents.Constants.GlobalConstants.*;
 import static contents.Constants.StartScreenConstants.*;
 

@@ -2,8 +2,9 @@
 import java.util.Scanner;
 
 public class Constants {
+    private Constants() {}
 
-    public class GlobalConstants {
+    public static class GlobalConstants {
 
         public static Scanner sc = new Scanner(System.in);
 
@@ -13,9 +14,9 @@ public class Constants {
 
     }
 
-    public class StartScreenConstants {
+    public static class StartScreenConstants {
 
-        public static String[] startMessage = new String[]{
+        public static String[] startMessage = {
                 ("Welcome to Tic Tac Toe!\n"),
                 ("Please select 1 or 2:"),
                 ("2D Tic Tac Toe or Ordinary Tic Tac Toe"),
@@ -28,7 +29,7 @@ public class Constants {
                 ("Symbol of first person:"),
                 ("Name of second person:"),
                 ("Symbol of second person:"),
-                ("Who will go first, ");
+                ("Who will go first, ")
         };
     }
 }
