@@ -1,10 +1,15 @@
 
+package classes;
+
+import utility.Constants.GlobalConstants;
+import utility.Constants.StartScreenConstants;
+
 public class TicTacToe {
 
     private char[][] mainBoard;
 
     //Only for 2D Tic-Tac-Toe:
-    private char[][] board1
+    private char[][] board1;
     private char[][] board2;
     private char[][] board3;
     private char[][] board4;

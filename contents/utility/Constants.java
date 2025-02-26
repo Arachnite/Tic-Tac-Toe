@@ -2,7 +2,6 @@
 import java.util.Scanner;
 
 public class Constants {
-    private Constants() {}
 
     public static class GlobalConstants {
 
