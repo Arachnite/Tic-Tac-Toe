@@ -1,4 +1,6 @@
 
+package utility;
+
 import java.util.Scanner;
 
 public class Constants {
@@ -16,10 +18,10 @@ public class Constants {
     public static class StartScreenConstants {
 
         public static String[] startMessage = {
-                ("Welcome to Tic Tac Toe!\n"),
+                ("\nWelcome to Tic Tac Toe!"),
                 ("Please select 1 or 2:"),
-                ("2D Tic Tac Toe or Ordinary Tic Tac Toe"),
-                ("Two Players or Single Player"),
+                ("Tic Tac Toe or Ultimate Tic Tac Toe"),
+                ("Two Players or Computer"),
                 ("Name"),
                 ("Symbol"),
                 ("Who will go first, "),

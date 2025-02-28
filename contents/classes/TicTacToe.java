@@ -6,24 +6,12 @@ import utility.Constants.StartScreenConstants;
 
 public class TicTacToe {
 
-    private char[][] mainBoard;
-
-    //Only for 2D Tic-Tac-Toe:
-    private char[][] board1;
-    private char[][] board2;
-    private char[][] board3;
-    private char[][] board4;
-    private char[][] board5;
-    private char[][] board6;
-    private char[][] board7;
-    private char[][] board8;
-    private char[][] board9;
-    //
+    private char[][] board;
 
     private String player1;
     private String player2;
 
-    /*  2D Tic-Tac-Toe Board Visualization:
+    /*  3D Tic-Tac-Toe Board Visualization:
 
                 |            |
          1      |     2      |     3
@@ -38,5 +26,21 @@ public class TicTacToe {
                 |            |
 
      */
+
+     public TicTacToe (boolean x) {
+       board = new char[][] {
+        {' ', ' ', ' '},
+        {' ', ' ', ' '},
+        {' ', ' ', ' '}
+       };
+     }
+
+     public TicTacToe (String x) {
+       board = new char[][] {
+        {' ', ' ', ' '},
+        {' ', ' ', ' '},
+        {' ', ' ', ' '}
+       };
+     }
 
 }
