@@ -4,9 +4,11 @@ package io.github.arachnite.logic;
 public class Player {
 
     private String name;
+
+    private char symbol;
+
     private boolean singlePlayer;
     private boolean isFirst;
-    private char symbol;
 
     public Player() {
         //Empty Constructor

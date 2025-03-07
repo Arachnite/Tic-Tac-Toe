@@ -37,12 +37,14 @@ public class StartScreen {
 
             if (input.equals("1")) {
                 tictactoeBoard[0][0] = new Board();
+                tictactoeBoard[0][0].setBoardUltimate(false);
                 break;
 
             } else if (input.equals("2")) {
                 for (int i = 0; i <= tictactoeBoard.length - 1; i++) {
                     for (int o = 0; o <= tictactoeBoard[i].length - 1; o++) {
                         tictactoeBoard[i][o] = new Board();
+                        tictactoeBoard[i][o].setBoardUltimate(false);
                     }
                 }
                 break;
@@ -92,7 +94,7 @@ public class StartScreen {
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter a symbol.\n");
+                GlobalConstants.printf("Invalid input. Please enter X or O.\n");
             }
         }
 
@@ -102,16 +104,16 @@ public class StartScreen {
         while(true) {
             String input = GlobalConstants.sc.nextLine();
 
-            if (input.equals("1")) {
+            if (input.equals("1") || input.equalsIgnoreCase("computer")) {
                 player1.isFirst(true);
                 break;
 
-            } else if (input.equals("2")) {
+            } else if (input.equals("2") || input.equalsIgnoreCase(player1.getName()) {
                 player1.isFirst(false);
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter 1 or 2.\n");
+                GlobalConstants.printf("Invalid input. Please enter computer or " + player1.getName() + " .\n");
             }
         }
     }
@@ -125,7 +127,7 @@ public class StartScreen {
 
         while(true) {
             String input = GlobalConstants.sc.nextLine();
-            if (player1.getName().equals(input)) {
+            if (input.equals(player1.getName())) {
                 GlobalConstants.printf("Invalid input. Please enter a different name.\n");
             } else {
                 player2.setPlayerName(input);
@@ -151,7 +153,7 @@ public class StartScreen {
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter a symbol.\n");
+                GlobalConstants.printf("Invalid input. Please enter X or O.\n");
             }
         }
 
@@ -162,18 +164,18 @@ public class StartScreen {
         while(true) {
             String input = GlobalConstants.sc.nextLine();
 
-            if (input.equals("1")) {
+            if (input.equals("1") || input.equalsIgnoreCase(player1.getName())) {
                 player1.isFirst(true);
                 player2.isFirst(false);
                 break;
 
-            } else if (input.equals("2")) {
+            } else if (input.equals("2") || input.equalsIgnoreCase(player2.getName())) {
                 player1.isFirst(false);
                 player2.isFirst(true);
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter 1 or 2.\n");
+                GlobalConstants.printf("Invalid input. Please enter a " + player1.getName() + " or " + player2.getName() + ".\n");
             }
         }
     }

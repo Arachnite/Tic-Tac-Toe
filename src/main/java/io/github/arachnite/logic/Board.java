@@ -8,7 +8,7 @@ public class Board {
     private Player player1;
     private Player player2;
 
-    private boolean singlePlayer;
+    private boolean isUltimate;
 
     /*  Ultimate Tic-Tac-Toe Board Visualization:
 
@@ -42,12 +42,33 @@ public class Board {
 
     }
 
-//    public void set(int x, char y) {
-//        if(isSinglePlayer) {
-//
-//        }
-//    }
+    public void setBoardUltimate(boolean x) {
 
+        this.isUltimate = x;
+
+    }
+
+    public boolean isBoardUltimate() {
+
+        return this.isUltimate;
+
+    }
+
+    public static void startSingleOrdinary(Board[][] tictactoeBoard, Player player1, Player player2) {
+
+    }
+
+    public static void startSingleUltimate(Board[][] tictactoeBoard, Player player1, Player player2) {
+
+    }
+
+    public static void startDoubleOrdinary(Board[][] tictactoeBoard, Player player1, Player player2) {
+
+    }
+
+    public static void startDoubleUltimate(Board[][] tictactoeBoard, Player player1, Player player2) {
+
+    }
 
 
 }

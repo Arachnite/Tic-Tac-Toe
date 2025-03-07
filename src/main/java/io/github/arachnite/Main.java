@@ -10,7 +10,17 @@ public class Main {
         Player player1 = new Player();
         Player player2 = new Player();
         StartScreen.printStartMessage(tictactoeBoard, player1, player2);
+        if (!tictactoeBoard[0][0].isBoardUltimate() && player1.isSinglePlayer()) {
+            Board.startSingleOrdinary(tictactoeBoard, player1, player2);
 
+        } else if (tictactoeBoard[0][0].isBoardUltimate() && player1.isSinglePlayer()) {
+            Board.startSingleUltimate(tictactoeBoard, player1, player2);
 
+        } else if (!tictactoeBoard[0][0].isBoardUltimate() && !player1.isSinglePlayer()) {
+            Board.startDoubleOrdinary(tictactoeBoard, player1, player2);
+
+        } else if (tictactoeBoard[0][0].isBoardUltimate() && !player1.isSinglePlayer()) {
+            Board.startDoubleUltimate(tictactoeBoard, player1, player2);
+        }
     }
 }

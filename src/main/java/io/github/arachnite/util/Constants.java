@@ -18,16 +18,14 @@ public class Constants {
         public static final Scanner sc = new Scanner(System.in);
 
         public static void printf(String x) {
+
             System.out.print(x);
+
         }
 
     }
 
     public static class StartScreenConstants {
-
-        private StartScreenConstants() {
-            throw new IllegalStateException("StartScreen Constants");
-        }
 
         public static final String[] startMessage = {
                 ("\nWelcome to Tic Tac Toe!"),
@@ -44,4 +42,9 @@ public class Constants {
                 ("Who will go first, ")
         };
     }
+
+//    public static class BoardConstants {
+//
+//        public static
+//    }
 }
