@@ -5,10 +5,6 @@ import java.util.Scanner;
 
 public class Constants {
 
-    private Constants() {
-        throw new IllegalStateException("Constants");
-    }
-
     public static class GlobalConstants {
 
         private GlobalConstants() {
@@ -36,8 +32,8 @@ public class Constants {
                 ("Symbol:"),
                 ("Who will go first, "),
                 (" or computer?"),
-                ("Name of first person:"),
-                ("Name of second person:"),
+                ("Name for first person:"),
+                ("Name for second person:"),
                 ("Symbol of first person:"),
                 ("Who will go first, ")
         };

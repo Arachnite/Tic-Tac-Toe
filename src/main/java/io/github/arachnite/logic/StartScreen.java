@@ -6,10 +6,6 @@ import io.github.arachnite.util.Constants.StartScreenConstants;
 
 public class StartScreen {
 
-    private StartScreen() {
-        throw new IllegalStateException("Start Screen Class");
-    }
-
     public static void printStartMessage(Board[][] tictactoeBoard, Player player1, Player player2) {
 
         executeFirstStartMessage(tictactoeBoard, player1, player2);
@@ -108,7 +104,7 @@ public class StartScreen {
                 player1.isFirst(true);
                 break;
 
-            } else if (input.equals("2") || input.equalsIgnoreCase(player1.getName()) {
+            } else if (input.equals("2") || input.equalsIgnoreCase(player1.getName())) {
                 player1.isFirst(false);
                 break;
 
@@ -127,8 +123,10 @@ public class StartScreen {
 
         while(true) {
             String input = GlobalConstants.sc.nextLine();
+
             if (input.equals(player1.getName())) {
                 GlobalConstants.printf("Invalid input. Please enter a different name.\n");
+
             } else {
                 player2.setPlayerName(input);
                 break;
