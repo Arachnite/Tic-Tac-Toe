@@ -1,43 +1,39 @@
 
 package io.github.arachnite.logic;
 
+import io.github.arachnite.util.Constants.GlobalConstants;
+import io.github.arachnite.util.Constants.BoardConstants;
+
 public class Board {
 
-    private char[][] board;
-
-    private Player player1;
-    private Player player2;
+    private String[][] board;
 
     private boolean isUltimate;
 
     /*  Ultimate Tic-Tac-Toe Board Visualization:
 
-                |            |
-         1      |     2      |     3              1 =         |      |
-                |            |                          --------------------
-    --------------------------------------                    |      |
-                |            |                          --------------------
-         4      |     5      |     6                          |      |
-                |            |
-    --------------------------------------
-                |            |
-         7      |     8      |     9
-                |            |
+              |      |
+        --------------------
+              |      |
+        --------------------
+              |      |
 
-    Each Board:         |      |
-                  --------------------
-                        |      |
-                  --------------------
-                        |      |
+        Ordinary Tic-Tac-Toe Board Visualization:
+
+              |      |
+        --------------------
+              |      |
+        --------------------
+              |      |
 
      */
 
     public Board () {
 
-        board = new char[][] {
-                {' ', ' ', ' '},
-                {' ', ' ', ' '},
-                {' ', ' ', ' '}
+        board = new String[][] {
+                {" ", " ", " "},
+                {" ", " ", " "},
+                {" ", " ", " "}
         };
 
     }
@@ -54,16 +50,16 @@ public class Board {
 
     }
 
-    public static void startSingleOrdinary(Board[][] tictactoeBoard, Player player1, Player player2) {
+    public static void startSingleOrdinary(Board[][] tictactoeBoard, Player player1) {
 
     }
 
-    public static void startSingleUltimate(Board[][] tictactoeBoard, Player player1, Player player2) {
+    public static void startSingleUltimate(Board[][] tictactoeBoard, Player player1) {
 
     }
 
     public static void startDoubleOrdinary(Board[][] tictactoeBoard, Player player1, Player player2) {
-
+        BoardConstants.printOrdinaryBoard(tictactoeBoard);
     }
 
     public static void startDoubleUltimate(Board[][] tictactoeBoard, Player player1, Player player2) {

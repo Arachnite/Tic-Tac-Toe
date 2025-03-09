@@ -3,6 +3,8 @@ package io.github.arachnite.util;
 
 import java.util.Scanner;
 
+import io.github.arachnite.logic.Board;
+
 public class Constants {
 
     public static class GlobalConstants {
@@ -39,8 +41,16 @@ public class Constants {
         };
     }
 
-//    public static class BoardConstants {
-//
-//        public static
-//    }
+    public static class BoardConstants {
+
+        public static void printOrdinaryBoard(Board[][] tictactoeBoard) {
+            for (int i = 0; i <= 2; i++) {
+                GlobalConstants.printf("\n   " + tictactoeBoard[i][0] + "  |   " + tictactoeBoard[i][1] + "  |   " +tictactoeBoard[i][2] + "\n--------------------\n");
+            }
+        }
+
+        public static void printUltimateBoard() {
+
+        }
+    }
 }

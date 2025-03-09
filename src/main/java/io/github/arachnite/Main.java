@@ -1,3 +1,4 @@
+
 package io.github.arachnite;
 
 import io.github.arachnite.logic.Board;
@@ -11,10 +12,10 @@ public class Main {
         Player player2 = new Player();
         StartScreen.printStartMessage(tictactoeBoard, player1, player2);
         if (!tictactoeBoard[0][0].isBoardUltimate() && player1.isSinglePlayer()) {
-            Board.startSingleOrdinary(tictactoeBoard, player1, player2);
+            Board.startSingleOrdinary(tictactoeBoard, player1);
 
         } else if (tictactoeBoard[0][0].isBoardUltimate() && player1.isSinglePlayer()) {
-            Board.startSingleUltimate(tictactoeBoard, player1, player2);
+            Board.startSingleUltimate(tictactoeBoard, player1);
 
         } else if (!tictactoeBoard[0][0].isBoardUltimate() && !player1.isSinglePlayer()) {
             Board.startDoubleOrdinary(tictactoeBoard, player1, player2);

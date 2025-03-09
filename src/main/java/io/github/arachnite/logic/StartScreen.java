@@ -11,11 +11,9 @@ public class StartScreen {
         executeFirstStartMessage(tictactoeBoard, player1, player2);
 
         if (player1.isSinglePlayer()) {
-
             executeStartMessageOnePlayer(tictactoeBoard, player1, player2);
 
         } else {
-
             executeStartMessageTwoPlayers(tictactoeBoard, player1, player2);
 
         }
