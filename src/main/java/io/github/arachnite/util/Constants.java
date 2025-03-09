@@ -9,12 +9,6 @@ public class Constants {
 
     public static class GlobalConstants {
 
-        private GlobalConstants() {
-            throw new IllegalStateException("Global Constants");
-        }
-
-        public static final Scanner sc = new Scanner(System.in);
-
         public static void printf(String x) {
 
             System.out.print(x);
@@ -44,8 +38,11 @@ public class Constants {
     public static class BoardConstants {
 
         public static void printOrdinaryBoard(Board[][] tictactoeBoard) {
-            for (int i = 0; i <= 2; i++) {
-                GlobalConstants.printf("\n   " + tictactoeBoard[i][0] + "  |   " + tictactoeBoard[i][1] + "  |   " +tictactoeBoard[i][2] + "\n--------------------\n");
+            for (int i = 0; i <= tictactoeBoard[0][0].getBoard().length - 1; i++) {
+                GlobalConstants.printf("\n");
+                for (int o = 0; o <= tictactoeBoard[0][0].getBoard()[i].length - 1; o++) {
+                    GlobalConstants.printf("   " + tictactoeBoard[0][0].getBoard()[i][o]);
+                }
             }
         }
 

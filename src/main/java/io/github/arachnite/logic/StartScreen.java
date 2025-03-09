@@ -4,9 +4,11 @@ package io.github.arachnite.logic;
 import io.github.arachnite.util.Constants.GlobalConstants;
 import io.github.arachnite.util.Constants.StartScreenConstants;
 
+import java.util.Scanner;
+
 public class StartScreen {
 
-    public static void printStartMessage(Board[][] tictactoeBoard, Player player1, Player player2) {
+    public static void executeStartMessage(Board tictactoeBoard, Player player1, Player player2) {
 
         executeFirstStartMessage(tictactoeBoard, player1, player2);
 
@@ -19,7 +21,7 @@ public class StartScreen {
         }
     }
 
-    public static void executeFirstStartMessage(Board[][] tictactoeBoard, Player player1, Player player2) {
+    public static void executeFirstStartMessage(Board tictactoeBoard, Player player1, Player player2) {
 
         //Tic Tac Toe or Ultimate Tic Tac Toe Loop
         for (int i = 0; i <= 2; i++) {
@@ -30,17 +32,11 @@ public class StartScreen {
             String input = GlobalConstants.sc.nextLine();
 
             if (input.equals("1")) {
-                tictactoeBoard[0][0] = new Board();
-                tictactoeBoard[0][0].setBoardUltimate(false);
+                tictactoeBoard = new Board();
                 break;
 
             } else if (input.equals("2")) {
-                for (int i = 0; i <= tictactoeBoard.length - 1; i++) {
-                    for (int o = 0; o <= tictactoeBoard[i].length - 1; o++) {
-                        tictactoeBoard[i][o] = new Board();
-                        tictactoeBoard[i][o].setBoardUltimate(false);
-                    }
-                }
+                tictactoeBoard = new UltimateBoard();
                 break;
 
             } else {
@@ -70,18 +66,19 @@ public class StartScreen {
         }
     }
 
-    public static void executeStartMessageOnePlayer(Board[][] tictactoeBoard, Player player1, Player player2) {
+    public static void executeStartMessageOnePlayer(Board tictactoeBoard, Player player1, Player player2) {
+
+        Scanner sc = new Scanner(System.in);
 
         //Name Loop
         GlobalConstants.printf(StartScreenConstants.startMessage[4] + "\n");
-        player1.setPlayerName(GlobalConstants.sc.nextLine());
-
+        player1.setPlayerName(sc.nextLine());
 
         //Symbol Loop
         GlobalConstants.printf(StartScreenConstants.startMessage[5] + "\n");
 
         while(true) {
-            String input = GlobalConstants.sc.nextLine();
+            String input = sc.nextLine();
 
             if (input.equalsIgnoreCase("X") || input.equalsIgnoreCase("O")) {
                 player1.setSymbol(input.charAt(0));
@@ -110,17 +107,20 @@ public class StartScreen {
                 GlobalConstants.printf("Invalid input. Please enter computer or " + player1.getName() + " .\n");
             }
         }
+        sc.close();
     }
 
-    public static void executeStartMessageTwoPlayers(Board[][] tictactoeBoard, Player player1, Player player2) {
+    public static void executeStartMessageTwoPlayers(Board tictactoeBoard, Player player1, Player player2) {
+
+        Scanner sc = new Scanner(System.in);
 
         //Name Loop
         GlobalConstants.printf(StartScreenConstants.startMessage[8] + "\n");
-        player1.setPlayerName(GlobalConstants.sc.nextLine());
+        player1.setPlayerName(sc.nextLine());
         GlobalConstants.printf(StartScreenConstants.startMessage[9] + "\n");
 
         while(true) {
-            String input = GlobalConstants.sc.nextLine();
+            String input = sc.nextLine();
 
             if (input.equals(player1.getName())) {
                 GlobalConstants.printf("Invalid input. Please enter a different name.\n");
@@ -136,7 +136,7 @@ public class StartScreen {
         GlobalConstants.printf(StartScreenConstants.startMessage[10] + "\n");
 
         while(true) {
-            String input = GlobalConstants.sc.nextLine();
+            String input = sc.nextLine();
 
             if(input.equalsIgnoreCase("X")) {
                 player1.setSymbol('X');
@@ -158,7 +158,7 @@ public class StartScreen {
         GlobalConstants.printf(StartScreenConstants.startMessage[11] + player1.getName() + " or " + player2.getName() + "?\n");
 
         while(true) {
-            String input = GlobalConstants.sc.nextLine();
+            String input = sc.nextLine();
 
             if (input.equals("1") || input.equalsIgnoreCase(player1.getName())) {
                 player1.isFirst(true);
@@ -174,5 +174,6 @@ public class StartScreen {
                 GlobalConstants.printf("Invalid input. Please enter a " + player1.getName() + " or " + player2.getName() + ".\n");
             }
         }
+        sc.close();
     }
 }

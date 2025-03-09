@@ -6,7 +6,7 @@ import io.github.arachnite.util.Constants.BoardConstants;
 
 public class Board {
 
-    private String[][] board;
+    private char[][] board;
 
     private boolean isUltimate;
 
@@ -30,23 +30,25 @@ public class Board {
 
     public Board () {
 
-        board = new String[][] {
-                {" ", " ", " "},
-                {" ", " ", " "},
-                {" ", " ", " "}
+        board = new char[][] {
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '}
         };
 
     }
 
+
+
     public void setBoardUltimate(boolean x) {
 
-        this.isUltimate = x;
+        isUltimate = x;
 
     }
 
     public boolean isBoardUltimate() {
 
-        return this.isUltimate;
+        return isUltimate;
 
     }
 
@@ -67,4 +69,15 @@ public class Board {
     }
 
 
+    public char[][] getBoard() {
+        return board;
+    }
+
+    // setters
+
+    public void setBoardSlot(int i, int j, char val) {
+        board[i][j] = val;
+    }
+
+    //getters
 }
