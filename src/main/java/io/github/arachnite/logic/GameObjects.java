@@ -1,3 +1,4 @@
+
 package io.github.arachnite.logic;
 
 public class GameObjects {
