@@ -10,45 +10,29 @@ public class Player {
     private boolean singlePlayer;
     private boolean isFirst;
 
+    // Constructors
     public Player() {
-        //Empty Constructor
+        // Default constructor
     }
 
+    // Setters
     public void setSinglePlayer(boolean x) {
         if(x) {
-            this.singlePlayer = true;
+            singlePlayer = true;
         } else {
-            this.singlePlayer = false;
+            singlePlayer = false;
         }
-    }
-
-    public boolean isSinglePlayer() {
-
-        return this.singlePlayer;
-
     }
 
     public void setPlayerName(String x) {
 
-        this.name = x;
-
-    }
-
-    public String getName() {
-
-        return this.name;
+        name = x;
 
     }
 
     public void setSymbol(char x) {
 
-        this.symbol = x;
-
-    }
-
-    public char getSymbol() {
-
-        return this.symbol;
+        symbol = x;
 
     }
 
@@ -57,6 +41,32 @@ public class Player {
         this.isFirst = x;
 
     }
+
+    // Getters
+
+    public boolean isSinglePlayer() {
+
+        return singlePlayer;
+
+    }
+
+
+
+    public String getName() {
+
+        return name;
+
+    }
+
+
+
+    public char getSymbol() {
+
+        return symbol;
+
+    }
+
+
 
     public boolean getOrder() {
 

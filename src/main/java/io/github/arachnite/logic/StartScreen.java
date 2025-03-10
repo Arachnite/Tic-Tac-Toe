@@ -23,13 +23,15 @@ public class StartScreen {
 
     public static void executeFirstStartMessage(Board tictactoeBoard, Player player1, Player player2) {
 
+        Scanner sc = new Scanner(System.in);
+
         //Tic Tac Toe or Ultimate Tic Tac Toe Loop
         for (int i = 0; i <= 2; i++) {
             GlobalConstants.printf(StartScreenConstants.startMessage[i] + "\n");
         }
 
         while (true) {
-            String input = GlobalConstants.sc.nextLine();
+            String input = sc.nextLine();
 
             if (input.equals("1")) {
                 tictactoeBoard = new Board();
@@ -49,7 +51,7 @@ public class StartScreen {
         GlobalConstants.printf(StartScreenConstants.startMessage[3] + "\n");
 
         while (true) {
-            String input = GlobalConstants.sc.nextLine();
+            String input = sc.nextLine();
 
             if (input.equals("1")) {
                 player1.setSinglePlayer(true);
@@ -64,6 +66,7 @@ public class StartScreen {
                 GlobalConstants.printf("Invalid input. Please enter 1 or 2.\n");
             }
         }
+        sc.close();
     }
 
     public static void executeStartMessageOnePlayer(Board tictactoeBoard, Player player1, Player player2) {
@@ -93,7 +96,7 @@ public class StartScreen {
         GlobalConstants.printf(StartScreenConstants.startMessage[6] + player1.getName() + StartScreenConstants.startMessage[7]);
 
         while(true) {
-            String input = GlobalConstants.sc.nextLine();
+            String input = sc.nextLine();
 
             if (input.equals("1") || input.equalsIgnoreCase("computer")) {
                 player1.isFirst(true);
