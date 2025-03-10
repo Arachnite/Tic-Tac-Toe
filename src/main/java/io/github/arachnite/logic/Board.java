@@ -8,8 +8,6 @@ public class Board {
 
     private char[][] board;
 
-    private boolean isUltimate;
-
     /*  Ultimate Tic-Tac-Toe Board Visualization:
 
               |      |
@@ -28,6 +26,7 @@ public class Board {
 
      */
 
+    // Constructor
     public Board () {
 
         board = new char[][] {
@@ -38,46 +37,20 @@ public class Board {
 
     }
 
-
-
-    public void setBoardUltimate(boolean x) {
-
-        isUltimate = x;
-
-    }
-
-    public boolean isBoardUltimate() {
-
-        return isUltimate;
-
-    }
-
-    public static void startSingleOrdinary(Board[][] tictactoeBoard, Player player1) {
-
-    }
-
-    public static void startSingleUltimate(Board[][] tictactoeBoard, Player player1) {
-
-    }
-
-    public static void startDoubleOrdinary(Board[][] tictactoeBoard, Player player1, Player player2) {
-        BoardConstants.printOrdinaryBoard(tictactoeBoard);
-    }
-
-    public static void startDoubleUltimate(Board[][] tictactoeBoard, Player player1, Player player2) {
-
-    }
-
-
+    //Getters
     public char[][] getBoard() {
+
         return board;
+
     }
 
-    // setters
-
+    //Setters
     public void setBoardSlot(int i, int j, char val) {
+
         board[i][j] = val;
+
     }
 
-    //getters
+    //Mutators
+
 }

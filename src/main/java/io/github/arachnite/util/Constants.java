@@ -1,8 +1,6 @@
 
 package io.github.arachnite.util;
 
-import java.util.Scanner;
-
 import io.github.arachnite.logic.Board;
 
 public class Constants {
