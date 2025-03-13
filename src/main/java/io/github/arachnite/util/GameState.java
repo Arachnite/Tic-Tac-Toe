@@ -1,3 +1,4 @@
+
 package io.github.arachnite.util;
 
 public enum GameState {
@@ -6,3 +7,4 @@ public enum GameState {
     PLAYER2TURN,
     POSTP2CHECK,
 }
+
