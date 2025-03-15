@@ -6,5 +6,7 @@ public enum GameState {
     POSTP1CHECK,
     PLAYER2TURN,
     POSTP2CHECK,
+    COMPUTERTURN,
+    COMPUTERCHECK
 }
 

@@ -8,20 +8,20 @@ import java.util.Scanner;
 
 public class StartScreen {
 
-    public static void executeStartMessage(Board tictactoeBoard, Player player1, Player player2) {
+    public static void executeStartMessage() {
 
-        executeFirstStartMessage(tictactoeBoard, player1, player2);
+        executeFirstStartMessage();
 
-        if (player1.isSinglePlayer()) {
-            executeStartMessageOnePlayer(player1);
+        if (GameObjects.player1.isSinglePlayer()) {
+            executeStartMessageOnePlayer();
 
         } else {
-            executeStartMessageTwoPlayers(player1, player2);
+            executeStartMessageTwoPlayers();
 
         }
     }
 
-    public static void executeFirstStartMessage(Board tictactoeBoard, Player player1, Player player2) {
+    public static void executeFirstStartMessage() {
 
         Scanner sc = new Scanner(System.in);
 
@@ -34,11 +34,11 @@ public class StartScreen {
             String input = sc.nextLine();
 
             if (input.equals("1")) {
-                tictactoeBoard = new Board();
+                GameObjects.gameBoard = new Board();
                 break;
 
             } else if (input.equals("2")) {
-                tictactoeBoard = new UltimateBoard();
+                GameObjects.gameBoard = new UltimateBoard();
                 break;
 
             } else {
@@ -54,12 +54,12 @@ public class StartScreen {
             String input = sc.nextLine();
 
             if (input.equals("1")) {
-                player1.setSinglePlayer(true);
+                GameObjects.player1.setSinglePlayer(true);
                 break;
 
             } else if (input.equals("2")) {
-                player1.setSinglePlayer(false);
-                player2.setSinglePlayer(false);
+                GameObjects.player1.setSinglePlayer(false);
+                GameObjects.player2.setSinglePlayer(false);
                 break;
 
             } else {
@@ -69,13 +69,13 @@ public class StartScreen {
         sc.close();
     }
 
-    public static void executeStartMessageOnePlayer(Player player1) {
+    public static void executeStartMessageOnePlayer() {
 
         Scanner sc = new Scanner(System.in);
 
         //Name Loop
         GlobalConstants.printf(StartScreenConstants.startMessage[4] + "\n");
-        player1.setPlayerName(sc.nextLine());
+        GameObjects.player1.setPlayerName(sc.nextLine());
 
         //Symbol Loop
         GlobalConstants.printf(StartScreenConstants.startMessage[5] + "\n");
@@ -84,7 +84,7 @@ public class StartScreen {
             String input = sc.nextLine();
 
             if (input.equalsIgnoreCase("X") || input.equalsIgnoreCase("O")) {
-                player1.setSymbol(input.charAt(0));
+                GameObjects.player1.setSymbol(input.charAt(0));
                 break;
 
             } else {
@@ -93,43 +93,43 @@ public class StartScreen {
         }
 
         //Turn Order Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[6] + player1.getName() + StartScreenConstants.startMessage[7]);
+        GlobalConstants.printf(StartScreenConstants.startMessage[6] + GameObjects.player1.getName() + StartScreenConstants.startMessage[7]);
 
         while(true) {
             String input = sc.nextLine();
 
             if (input.equals("1") || input.equalsIgnoreCase("computer")) {
-                player1.isFirst(true);
+                GameObjects.player1.isFirst(true);
                 break;
 
-            } else if (input.equals("2") || input.equalsIgnoreCase(player1.getName())) {
-                player1.isFirst(false);
+            } else if (input.equals("2") || input.equalsIgnoreCase(GameObjects.player1.getName())) {
+                GameObjects.player1.isFirst(false);
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter computer or " + player1.getName() + " .\n");
+                GlobalConstants.printf("Invalid input. Please enter computer or " + GameObjects.player1.getName() + " .\n");
             }
         }
         sc.close();
     }
 
-    public static void executeStartMessageTwoPlayers(Player player1, Player player2) {
+    public static void executeStartMessageTwoPlayers() {
 
         Scanner sc = new Scanner(System.in);
 
         //Name Loop
         GlobalConstants.printf(StartScreenConstants.startMessage[8] + "\n");
-        player1.setPlayerName(sc.nextLine());
+        GameObjects.player1.setPlayerName(sc.nextLine());
         GlobalConstants.printf(StartScreenConstants.startMessage[9] + "\n");
 
         while(true) {
             String input = sc.nextLine();
 
-            if (input.equals(player1.getName())) {
+            if (input.equals(GameObjects.player1.getName())) {
                 GlobalConstants.printf("Invalid input. Please enter a different name.\n");
 
             } else {
-                player2.setPlayerName(input);
+                GameObjects.player2.setPlayerName(input);
                 break;
             }
         }
@@ -142,13 +142,13 @@ public class StartScreen {
             String input = sc.nextLine();
 
             if(input.equalsIgnoreCase("X")) {
-                player1.setSymbol('X');
-                player2.setSymbol('O');
+                GameObjects.player1.setSymbol('X');
+                GameObjects.player2.setSymbol('O');
                 break;
 
             } else if (input.equalsIgnoreCase("O")) {
-                player1.setSymbol('O');
-                player2.setSymbol('X');
+                GameObjects.player1.setSymbol('O');
+                GameObjects.player2.setSymbol('X');
                 break;
 
             } else {
@@ -158,23 +158,23 @@ public class StartScreen {
 
 
         //Turn Order Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[11] + player1.getName() + " or " + player2.getName() + "?\n");
+        GlobalConstants.printf(StartScreenConstants.startMessage[11] + GameObjects.player1.getName() + " or " + GameObjects.player2.getName() + "?\n");
 
         while(true) {
             String input = sc.nextLine();
 
-            if (input.equals("1") || input.equalsIgnoreCase(player1.getName())) {
-                player1.isFirst(true);
-                player2.isFirst(false);
+            if (input.equals("1") || input.equalsIgnoreCase(GameObjects.player1.getName())) {
+                GameObjects.player1.isFirst(true);
+                GameObjects.player2.isFirst(false);
                 break;
 
-            } else if (input.equals("2") || input.equalsIgnoreCase(player2.getName())) {
-                player1.isFirst(false);
-                player2.isFirst(true);
+            } else if (input.equals("2") || input.equalsIgnoreCase(GameObjects.player2.getName())) {
+                GameObjects.player1.isFirst(false);
+                GameObjects.player2.isFirst(true);
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter a " + player1.getName() + " or " + player2.getName() + ".\n");
+                GlobalConstants.printf("Invalid input. Please enter a " + GameObjects.player1.getName() + " or " + GameObjects.player2.getName() + ".\n");
             }
         }
         sc.close();
