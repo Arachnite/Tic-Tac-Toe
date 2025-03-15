@@ -13,10 +13,10 @@ public class StartScreen {
         executeFirstStartMessage(tictactoeBoard, player1, player2);
 
         if (player1.isSinglePlayer()) {
-            executeStartMessageOnePlayer(tictactoeBoard, player1, player2);
+            executeStartMessageOnePlayer(player1);
 
         } else {
-            executeStartMessageTwoPlayers(tictactoeBoard, player1, player2);
+            executeStartMessageTwoPlayers(player1, player2);
 
         }
     }
@@ -69,7 +69,7 @@ public class StartScreen {
         sc.close();
     }
 
-    public static void executeStartMessageOnePlayer(Board tictactoeBoard, Player player1, Player player2) {
+    public static void executeStartMessageOnePlayer(Player player1) {
 
         Scanner sc = new Scanner(System.in);
 
@@ -113,7 +113,7 @@ public class StartScreen {
         sc.close();
     }
 
-    public static void executeStartMessageTwoPlayers(Board tictactoeBoard, Player player1, Player player2) {
+    public static void executeStartMessageTwoPlayers(Player player1, Player player2) {
 
         Scanner sc = new Scanner(System.in);
 
