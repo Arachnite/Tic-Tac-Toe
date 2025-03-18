@@ -18,9 +18,9 @@ public class Player {
     // Setters
     public void setSinglePlayer(boolean x) {
         if(x) {
-            singlePlayer = true;
+            singlePlayer = x;
         } else {
-            singlePlayer = false;
+            singlePlayer = x;
         }
     }
 
@@ -38,7 +38,7 @@ public class Player {
 
     public void isFirst(boolean x) {
 
-        this.isFirst = x;
+        isFirst = x;
 
     }
 

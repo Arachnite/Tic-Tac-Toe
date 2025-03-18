@@ -4,20 +4,24 @@ package io.github.arachnite.logic;
 import io.github.arachnite.util.Constants.GlobalConstants;
 import io.github.arachnite.util.Constants.StartScreenConstants;
 
+import io.github.arachnite.util.GameMode;
+
 import java.util.Scanner;
 
 public class StartScreen {
 
     public static void executeStartMessage() {
 
-        executeFirstStartMessage();
+        try(Scanner sc = new Scanner(System.in)) {
+            executeFirstStartMessage();
 
-        if (GameObjects.player1.isSinglePlayer()) {
-            executeStartMessageOnePlayer();
+            if (GameObjects.player1.isSinglePlayer()) {
+                executeStartMessageOnePlayer();
 
-        } else {
-            executeStartMessageTwoPlayers();
+            } else {
+                executeStartMessageTwoPlayers();
 
+            }
         }
     }
 
@@ -35,10 +39,12 @@ public class StartScreen {
 
             if (input.equals("1")) {
                 GameObjects.gameBoard = new Board();
+                GameObjects.gameMode = GameMode.ORDINARY;
                 break;
 
             } else if (input.equals("2")) {
                 GameObjects.gameBoard = new UltimateBoard();
+                GameObjects.gameMode = GameMode.ULTIMATE;
                 break;
 
             } else {
@@ -55,18 +61,34 @@ public class StartScreen {
 
             if (input.equals("1")) {
                 GameObjects.player1.setSinglePlayer(true);
+
+                switch (GameObjects.gameMode) {
+                    case ORDINARY:
+                        GameObjects.gameMode = GameMode.CORDINARY;
+                        break;
+                    case ULTIMATE:
+                        GameObjects.gameMode = GameMode.CULTIMATE;
+                        break;
+                }
                 break;
 
             } else if (input.equals("2")) {
                 GameObjects.player1.setSinglePlayer(false);
-                GameObjects.player2.setSinglePlayer(false);
+
+                switch (GameObjects.gameMode) {
+                    case ORDINARY:
+                        GameObjects.gameMode = GameMode.PORDINARY;
+                        break;
+                    case ULTIMATE:
+                        GameObjects.gameMode = GameMode.PULTIMATE;
+                        break;
+                }
                 break;
 
             } else {
                 GlobalConstants.printf("Invalid input. Please enter 1 or 2.\n");
             }
         }
-        sc.close();
     }
 
     public static void executeStartMessageOnePlayer() {
@@ -110,7 +132,6 @@ public class StartScreen {
                 GlobalConstants.printf("Invalid input. Please enter computer or " + GameObjects.player1.getName() + " .\n");
             }
         }
-        sc.close();
     }
 
     public static void executeStartMessageTwoPlayers() {
@@ -177,6 +198,5 @@ public class StartScreen {
                 GlobalConstants.printf("Invalid input. Please enter a " + GameObjects.player1.getName() + " or " + GameObjects.player2.getName() + ".\n");
             }
         }
-        sc.close();
     }
 }

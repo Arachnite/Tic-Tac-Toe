@@ -1,7 +1,6 @@
 
 package io.github.arachnite.util;
 
-import io.github.arachnite.logic.Board;
 import io.github.arachnite.logic.GameObjects;
 
 public class Constants {
@@ -37,16 +36,17 @@ public class Constants {
     public static class BoardConstants {
 
         public static void printOrdinaryBoard() {
+            GlobalConstants.printf("\n");
             for(int i = 0; i < 3; i++) {
                 for(int ii = 0; ii < 3; ii++) {
-                    GlobalConstants.printf(" " + GameObjects.gameBoard.getBoard()[i][ii] + " ");
+                    GlobalConstants.printf("   " + GameObjects.gameBoard.getBoard()[i][ii] + "   ");
                     if(ii != 2) {
                         GlobalConstants.printf("|");
                     }
                 }
                 GlobalConstants.printf("\n");
                 if(i != 2) {
-                    GlobalConstants.printf("-----------\n");
+                    GlobalConstants.printf("-----------------------\n");
                 }
             }
         }
