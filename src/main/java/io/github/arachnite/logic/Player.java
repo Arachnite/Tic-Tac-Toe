@@ -36,13 +36,19 @@ public class Player {
 
     }
 
-    public void isFirst(boolean x) {
+    public void setFirst(boolean x) {
 
         isFirst = x;
 
     }
 
     // Getters
+
+    public boolean isFirst() {
+
+        return isFirst;
+
+    }
 
     public boolean isSinglePlayer() {
 

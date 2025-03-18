@@ -7,7 +7,11 @@ public class GameController {
 
     public static void startGame() {
         StartScreen.executeStartMessage();
-        GameObjects.gameState = GameState.PLAYER1TURN;
+        if(GameObjects.player1.isFirst()) {
+            GameObjects.gameState = GameState.PLAYER1TURN;
+        } else {
+            GameObjects.gameState = GameState.PLAYER2TURN;
+        }
         initializeTurn();
         //GlobalConstants.printf(GameObjects.gameMode.toString());
     }
@@ -21,7 +25,7 @@ public class GameController {
 
                 break;
             case PLAYER2TURN:
-
+                GameFunctions.player2Turn();
                 break;
             case POSTP2CHECK:
 

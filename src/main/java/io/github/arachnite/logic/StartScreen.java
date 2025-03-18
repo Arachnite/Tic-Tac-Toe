@@ -129,11 +129,11 @@ public class StartScreen {
             String input = sc.nextLine();
 
             if (input.equals("1") || input.equalsIgnoreCase("computer")) {
-                GameObjects.player1.isFirst(true);
+                GameObjects.player1.setFirst(true);
                 break;
 
             } else if (input.equals("2") || input.equalsIgnoreCase(GameObjects.player1.getName())) {
-                GameObjects.player1.isFirst(false);
+                GameObjects.player1.setFirst(false);
                 break;
 
             } else {
@@ -193,13 +193,13 @@ public class StartScreen {
             String input = sc.nextLine();
 
             if (input.equals("1") || input.equalsIgnoreCase(GameObjects.player1.getName())) {
-                GameObjects.player1.isFirst(true);
-                GameObjects.player2.isFirst(false);
+                GameObjects.player1.setFirst(true);
+                GameObjects.player2.setFirst(false);
                 break;
 
             } else if (input.equals("2") || input.equalsIgnoreCase(GameObjects.player2.getName())) {
-                GameObjects.player1.isFirst(false);
-                GameObjects.player2.isFirst(true);
+                GameObjects.player1.setFirst(false);
+                GameObjects.player2.setFirst(true);
                 break;
 
             } else {
