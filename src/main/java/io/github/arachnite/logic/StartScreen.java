@@ -61,6 +61,7 @@ public class StartScreen {
 
             if (input.equals("1")) {
                 GameObjects.player1.setSinglePlayer(true);
+                GameObjects.player2.setSinglePlayer(true);
 
                 switch (GameObjects.gameMode) {
                     case ORDINARY:
@@ -74,6 +75,7 @@ public class StartScreen {
 
             } else if (input.equals("2")) {
                 GameObjects.player1.setSinglePlayer(false);
+                GameObjects.player2.setSinglePlayer(false);
 
                 switch (GameObjects.gameMode) {
                     case ORDINARY:
@@ -98,6 +100,7 @@ public class StartScreen {
         //Name Loop
         GlobalConstants.printf(StartScreenConstants.startMessage[4] + "\n");
         GameObjects.player1.setPlayerName(sc.nextLine());
+        GameObjects.player2.setPlayerName("computer");
 
         //Symbol Loop
         GlobalConstants.printf(StartScreenConstants.startMessage[5] + "\n");
@@ -105,10 +108,15 @@ public class StartScreen {
         while(true) {
             String input = sc.nextLine();
 
-            if (input.equalsIgnoreCase("X") || input.equalsIgnoreCase("O")) {
-                GameObjects.player1.setSymbol(input.charAt(0));
+            if (input.equalsIgnoreCase("X")) {
+                GameObjects.player1.setSymbol('X');
+                GameObjects.player2.setSymbol('O');
                 break;
 
+            } else if (input.equalsIgnoreCase("O")) {
+                GameObjects.player1.setSymbol('O');
+                GameObjects.player2.setSymbol('X');
+                break;
             } else {
                 GlobalConstants.printf("Invalid input. Please enter X or O.\n");
             }
@@ -195,7 +203,7 @@ public class StartScreen {
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter a " + GameObjects.player1.getName() + " or " + GameObjects.player2.getName() + ".\n");
+                GlobalConstants.printf("Invalid input. Please enter " + GameObjects.player1.getName() + " or " + GameObjects.player2.getName() + ".\n");
             }
         }
     }
