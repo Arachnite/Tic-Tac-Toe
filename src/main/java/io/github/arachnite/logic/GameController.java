@@ -2,6 +2,7 @@
 package io.github.arachnite.logic;
 
 import io.github.arachnite.util.GameState;
+import io.github.arachnite.util.Constants.GlobalConstants;
 
 public class GameController {
 
@@ -27,10 +28,20 @@ public class GameController {
                 GameFunctions.player2Turn();
                 break;
             case POSTP2CHECK:
-                GameFunction.postP2Check();
+                GameFunctions.postP2Check();
                 break;
         }
     }
 
+    public static void endGame(Player player) {
 
+        GlobalConstants.printf(player.getName() + " has won!");
+
+    }
+
+    public static void tieGame() {
+
+        GlobalConstants.printf("Tie game!");
+
+    }
 }

@@ -55,14 +55,4 @@ public class Board {
         return board;
 
     }
-
-    //Setters
-    public void setBoardSlot(int i, int j, char val) {
-
-        board[i][j] = val;
-
-    }
-
-    //Mutators
-
 }

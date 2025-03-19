@@ -28,12 +28,25 @@ public class GameFunctions {
 
                 break;
         }
-
     }
 
     public static void postP1Check() {
-        GameObjects.gameState = GameState.PLAYER2TURN;
-        GameController.initializeTurn();
+        switch (GameObjects.gameMode) {
+            case PORDINARY:
+                GameObjects.gameState = GameState.PLAYER2TURN;
+                checkOrdinaryBoard(GameObjects.player1);
+                GameController.initializeTurn();
+                break;
+            case PULTIMATE:
+
+                break;
+            case CORDINARY:
+
+                break;
+            case CULTIMATE:
+
+                break;
+        }
     }
 
     public static void player2Turn() {
@@ -58,8 +71,22 @@ public class GameFunctions {
     }
 
     public static void postP2Check() {
-        GameObjects.gameState = GameState.PLAYER1TURN;
-        GameController.initializeTurn();
+        switch (GameObjects.gameMode) {
+            case PORDINARY:
+                GameObjects.gameState = GameState.PLAYER1TURN;
+                checkOrdinaryBoard(GameObjects.player2);
+                GameController.initializeTurn();
+                break;
+            case PULTIMATE:
+
+                break;
+            case CORDINARY:
+
+                break;
+            case CULTIMATE:
+
+                break;
+        }
     }
 
     public static void setOrdinaryPlace(Player player) {
@@ -78,7 +105,7 @@ public class GameFunctions {
                         return;
                     } else {
                         GlobalConstants.printf(invalidMessage);
-                        return;
+                        continue;
                     }
                 case "top middle":
                     if(GameObjects.gameBoard.getBoard()[0][1] == ' ') {
@@ -86,11 +113,125 @@ public class GameFunctions {
                         return;
                     } else {
                         GlobalConstants.printf(invalidMessage);
+                        continue;
+                    }
+                case "top right":
+                    if(GameObjects.gameBoard.getBoard()[0][2] == ' ') {
+                        GameObjects.gameBoard.getBoard()[0][2] = player.getSymbol();
                         return;
+                    } else {
+                        GlobalConstants.printf(invalidMessage);
+                        continue;
+                    }
+                case "middle left":
+                    if(GameObjects.gameBoard.getBoard()[1][0] == ' ') {
+                        GameObjects.gameBoard.getBoard()[1][0] = player.getSymbol();
+                        return;
+                    } else {
+                        GlobalConstants.printf(invalidMessage);
+                        continue;
+                    }
+                case "middle middle":
+                    if(GameObjects.gameBoard.getBoard()[1][1] == ' ') {
+                        GameObjects.gameBoard.getBoard()[1][1] = player.getSymbol();
+                        return;
+                    } else {
+                        GlobalConstants.printf(invalidMessage);
+                        continue;
+                    }
+                case "middle right":
+                    if(GameObjects.gameBoard.getBoard()[1][2] == ' ') {
+                        GameObjects.gameBoard.getBoard()[1][2] = player.getSymbol();
+                        return;
+                    } else {
+                        GlobalConstants.printf(invalidMessage);
+                        continue;
+                    }
+                case "bottom left":
+                    if(GameObjects.gameBoard.getBoard()[2][0] == ' ') {
+                        GameObjects.gameBoard.getBoard()[2][0] = player.getSymbol();
+                        return;
+                    } else {
+                        GlobalConstants.printf(invalidMessage);
+                        continue;
+                    }
+                case "bottom middle":
+                    if(GameObjects.gameBoard.getBoard()[2][1] == ' ') {
+                        GameObjects.gameBoard.getBoard()[2][1] = player.getSymbol();
+                        return;
+                    } else {
+                        GlobalConstants.printf(invalidMessage);
+                        continue;
+                    }
+                case "bottom right":
+                    if(GameObjects.gameBoard.getBoard()[2][2] == ' ') {
+                        GameObjects.gameBoard.getBoard()[2][2] = player.getSymbol();
+                        return;
+                    } else {
+                        GlobalConstants.printf(invalidMessage);
+                        continue;
                     }
                 default:
                     GlobalConstants.printf(invalidMessage);
             }
+        }
+    }
+
+    public static void checkOrdinaryBoard(Player player) {
+
+        if (player.getSymbol() == GameObjects.gameBoard.getBoard()[0][0]) {
+
+            if(player.getSymbol() == GameObjects.gameBoard.getBoard()[0][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[0][2]) {
+
+                GameObjects.gameState = GameState.ENDGAME;
+                GameController.endGame(player);
+
+            } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[1][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][2]) {
+
+                GameObjects.gameState = GameState.ENDGAME;
+                GameController.endGame(player);
+
+            } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[1][0] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][0]) {
+
+                GameObjects.gameState = GameState.ENDGAME;
+                GameController.endGame(player);
+
+            }
+
+        } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[0][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[1][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][1]) {
+
+            GameObjects.gameState = GameState.ENDGAME;
+            GameController.endGame(player);
+
+        } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[0][2]) {
+
+            if(player.getSymbol() == GameObjects.gameBoard.getBoard()[1][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][0]) {
+
+                GameObjects.gameState = GameState.ENDGAME;
+                GameController.endGame(player);
+
+            } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[1][2] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][2]) {
+
+                GameObjects.gameState = GameState.ENDGAME;
+                GameController.endGame(player);
+
+            }
+
+        } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[1][0] && player.getSymbol() == GameObjects.gameBoard.getBoard()[1][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[1][2]) {
+
+            GameObjects.gameState = GameState.ENDGAME;
+            GameController.endGame(player);
+
+        } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[2][0] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][2]) {
+
+            GameObjects.gameState = GameState.ENDGAME;
+            GameController.endGame(player);
+
+        } else if(GameObjects.gameBoard.getBoard()[0][0] != ' ' && GameObjects.gameBoard.getBoard()[0][1] != ' ' && GameObjects.gameBoard.getBoard()[0][2] != ' ' && GameObjects.gameBoard.getBoard()[1][0] != ' ' && GameObjects.gameBoard.getBoard()[1][1] != ' ' && GameObjects.gameBoard.getBoard()[1][2] != ' ' && GameObjects.gameBoard.getBoard()[2][0] != ' ' && GameObjects.gameBoard.getBoard()[2][1] != ' ' && GameObjects.gameBoard.getBoard()[2][2] != ' ') {
+
+            GameObjects.gameState = GameState.ENDGAME;
+            GameController.tieGame();
+
         }
     }
 }

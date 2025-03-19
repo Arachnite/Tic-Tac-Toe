@@ -7,6 +7,7 @@ public enum GameState {
     PLAYER2TURN,
     POSTP2CHECK,
     COMPUTERTURN,
-    COMPUTERCHECK
+    COMPUTERCHECK,
+    ENDGAME
 }
 

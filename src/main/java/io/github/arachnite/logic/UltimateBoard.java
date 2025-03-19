@@ -9,8 +9,4 @@ public class UltimateBoard extends Board {
         Board[][] ultimateBoard = new Board[3][3];
 
     }
-
-
-
-
 }
