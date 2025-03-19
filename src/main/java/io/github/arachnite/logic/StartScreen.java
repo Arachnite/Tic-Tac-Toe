@@ -12,16 +12,14 @@ public class StartScreen {
 
     public static void executeStartMessage() {
 
-        try(Scanner sc = new Scanner(System.in)) {
-            executeFirstStartMessage();
+        executeFirstStartMessage();
 
-            if (GameObjects.player1.isSinglePlayer()) {
-                executeStartMessageOnePlayer();
+        if (GameObjects.player1.isSinglePlayer()) {
+            executeStartMessageOnePlayer();
 
-            } else {
-                executeStartMessageTwoPlayers();
+        } else {
+            executeStartMessageTwoPlayers();
 
-            }
         }
     }
 

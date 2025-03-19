@@ -13,7 +13,6 @@ public class GameController {
             GameObjects.gameState = GameState.PLAYER2TURN;
         }
         initializeTurn();
-        //GlobalConstants.printf(GameObjects.gameMode.toString());
     }
 
     public static void initializeTurn() {
@@ -22,13 +21,13 @@ public class GameController {
                 GameFunctions.player1Turn();
                 break;
             case POSTP1CHECK:
-
+                GameFunctions.postP1Check();
                 break;
             case PLAYER2TURN:
                 GameFunctions.player2Turn();
                 break;
             case POSTP2CHECK:
-
+                GameFunction.postP2Check();
                 break;
         }
     }

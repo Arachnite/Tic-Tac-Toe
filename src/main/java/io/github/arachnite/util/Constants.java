@@ -50,7 +50,7 @@ public class Constants {
                 }
             }
 
-            GlobalConstants.printf("\n" + GameObjects.player1.getName() + ": " + GameObjects.player1.getSymbol() + "\n" + GameObjects.player2.getName() + ": " + GameObjects.player2.getSymbol() + "\n");
+            GlobalConstants.printf("\n" + GameObjects.player1.getName() + ": " + GameObjects.player1.getSymbol() + "       " + GameObjects.player2.getName() + ": " + GameObjects.player2.getSymbol() + "\n");
         }
 
         public static void printUltimateBoard() {
