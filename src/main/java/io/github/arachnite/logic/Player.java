@@ -18,9 +18,13 @@ public class Player {
     // Setters
     public void setSinglePlayer(boolean x) {
         if(x) {
+
             singlePlayer = x;
+
         } else {
+
             singlePlayer = x;
+
         }
     }
 
@@ -56,27 +60,15 @@ public class Player {
 
     }
 
-
-
     public String getName() {
 
         return name;
 
     }
 
-
-
     public char getSymbol() {
 
         return symbol;
-
-    }
-
-
-
-    public boolean getOrder() {
-
-        return this.isFirst;
 
     }
 }

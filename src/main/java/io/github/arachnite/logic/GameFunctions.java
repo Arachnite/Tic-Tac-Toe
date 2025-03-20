@@ -22,7 +22,9 @@ public class GameFunctions {
 
                 break;
             case CORDINARY:
-
+                BoardConstants.printOrdinaryBoard();
+                setOrdinaryPlace(GameObjects.player1);
+                GameObjects.gameState = GameState.POSTP1CHECK;
                 break;
             case CULTIMATE:
 
@@ -41,7 +43,9 @@ public class GameFunctions {
 
                 break;
             case CORDINARY:
-
+                GameObjects.gameState = GameState.PLAYER2TURN;
+                checkOrdinaryBoard(GameObjects.player1);
+                GameController.initializeTurn();
                 break;
             case CULTIMATE:
 
@@ -62,7 +66,8 @@ public class GameFunctions {
 
                 break;
             case CORDINARY:
-
+                computerOrdinaryTurn();
+                GameObjects.gameState = GameState.POSTP2CHECK;
                 break;
             case CULTIMATE:
 
@@ -183,55 +188,62 @@ public class GameFunctions {
 
             if(player.getSymbol() == GameObjects.gameBoard.getBoard()[0][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[0][2]) {
 
-                GameObjects.gameState = GameState.ENDGAME;
-                GameController.endGame(player);
+                endGameFunction(player);
 
             } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[1][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][2]) {
 
-                GameObjects.gameState = GameState.ENDGAME;
-                GameController.endGame(player);
+                endGameFunction(player);
 
             } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[1][0] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][0]) {
 
-                GameObjects.gameState = GameState.ENDGAME;
-                GameController.endGame(player);
+                endGameFunction(player);
 
             }
 
         } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[0][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[1][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][1]) {
 
-            GameObjects.gameState = GameState.ENDGAME;
-            GameController.endGame(player);
+            endGameFunction(player);
 
         } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[0][2]) {
 
             if(player.getSymbol() == GameObjects.gameBoard.getBoard()[1][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][0]) {
 
-                GameObjects.gameState = GameState.ENDGAME;
-                GameController.endGame(player);
+                endGameFunction(player);
 
             } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[1][2] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][2]) {
 
-                GameObjects.gameState = GameState.ENDGAME;
-                GameController.endGame(player);
+                endGameFunction(player);
 
             }
 
         } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[1][0] && player.getSymbol() == GameObjects.gameBoard.getBoard()[1][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[1][2]) {
 
-            GameObjects.gameState = GameState.ENDGAME;
-            GameController.endGame(player);
+            endGameFunction(player);
 
         } else if(player.getSymbol() == GameObjects.gameBoard.getBoard()[2][0] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][1] && player.getSymbol() == GameObjects.gameBoard.getBoard()[2][2]) {
 
-            GameObjects.gameState = GameState.ENDGAME;
-            GameController.endGame(player);
+            endGameFunction(player);
 
         } else if(GameObjects.gameBoard.getBoard()[0][0] != ' ' && GameObjects.gameBoard.getBoard()[0][1] != ' ' && GameObjects.gameBoard.getBoard()[0][2] != ' ' && GameObjects.gameBoard.getBoard()[1][0] != ' ' && GameObjects.gameBoard.getBoard()[1][1] != ' ' && GameObjects.gameBoard.getBoard()[1][2] != ' ' && GameObjects.gameBoard.getBoard()[2][0] != ' ' && GameObjects.gameBoard.getBoard()[2][1] != ' ' && GameObjects.gameBoard.getBoard()[2][2] != ' ') {
 
             GameObjects.gameState = GameState.ENDGAME;
+            BoardConstants.printOrdinaryBoard();
             GameController.tieGame();
 
+        }
+    }
+
+    public static void endGameFunction(Player player) {
+
+        GameObjects.gameState = GameState.ENDGAME;
+        BoardConstants.printOrdinaryBoard();
+        GameController.endGame(player);
+
+    }
+
+    public static void computerOrdinaryTurn() {
+        if(!GameObjects.player1.isFirst()) {
+            GameObjects.gameBoard.getBoard()[1][1] = GameObjects.player2.getSymbol();
         }
     }
 }

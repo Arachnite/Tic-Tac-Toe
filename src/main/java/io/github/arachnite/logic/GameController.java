@@ -4,9 +4,14 @@ package io.github.arachnite.logic;
 import io.github.arachnite.util.GameState;
 import io.github.arachnite.util.Constants.GlobalConstants;
 
+import java.util.Scanner;
+
 public class GameController {
 
     public static void startGame() {
+        GameObjects.computerTurn = 1;
+        GameObjects.player1 = new Player();
+        GameObjects.player2 = new Player();
         StartScreen.executeStartMessage();
         if(GameObjects.player1.isFirst()) {
             GameObjects.gameState = GameState.PLAYER1TURN;
@@ -35,13 +40,23 @@ public class GameController {
 
     public static void endGame(Player player) {
 
-        GlobalConstants.printf(player.getName() + " has won!");
+        Scanner sc = new Scanner(System.in);
 
+        GlobalConstants.printf("\n" + player.getName() + " has won!\nWant to play again? (Y/N)\n\n");
+        String input = sc.nextLine();
+        if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
+            startGame();
+        }
     }
 
     public static void tieGame() {
 
-        GlobalConstants.printf("Tie game!");
+        Scanner sc = new Scanner(System.in);
 
+        GlobalConstants.printf("\nTie game!");
+        String input = sc.nextLine();
+        if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
+            startGame();
+        }
     }
 }
