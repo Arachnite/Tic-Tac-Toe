@@ -45,7 +45,9 @@ public class GameController {
         GlobalConstants.printf("\n" + player.getName() + " has won!\nWant to play again? (Y/N)\n\n");
         String input = sc.nextLine();
         if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
+
             startGame();
+
         }
     }
 
@@ -56,7 +58,9 @@ public class GameController {
         GlobalConstants.printf("\nTie game!\nWant to play again? (Y/N)\n\n");
         String input = sc.nextLine();
         if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
+
             startGame();
+
         }
     }
 }
