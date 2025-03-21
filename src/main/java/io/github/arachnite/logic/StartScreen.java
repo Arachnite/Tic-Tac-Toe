@@ -124,11 +124,11 @@ public class StartScreen {
         while(true) {
             String input = sc.nextLine();
 
-            if (input.equals("1") || input.equalsIgnoreCase("computer")) {
+            if (input.equals("1") || input.equalsIgnoreCase(GameObjects.player1.getName())) {
                 GameObjects.player1.setFirst(true);
                 break;
 
-            } else if (input.equals("2") || input.equalsIgnoreCase(GameObjects.player1.getName())) {
+            } else if (input.equals("2") || input.equalsIgnoreCase("computer")) {
                 GameObjects.player1.setFirst(false);
                 break;
 

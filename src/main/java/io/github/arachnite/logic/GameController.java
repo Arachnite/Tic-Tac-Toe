@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class GameController {
 
     public static void startGame() {
-        GameObjects.computerTurn = 1;
+        GameObjects.computerTurn = 0;
         GameObjects.player1 = new Player();
         GameObjects.player2 = new Player();
         StartScreen.executeStartMessage();
