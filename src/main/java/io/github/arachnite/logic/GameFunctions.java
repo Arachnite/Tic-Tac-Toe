@@ -84,7 +84,7 @@ public class GameFunctions {
             String input = sc.nextLine();
 
             switch (input.toLowerCase()) {
-                case "top left":
+                case "top left", "left top":
                     if(GameObjects.gameBoard.getBoard()[0][0] == ' ') {
                         GameObjects.gameBoard.getBoard()[0][0] = player.getSymbol();
                         return;
@@ -92,7 +92,7 @@ public class GameFunctions {
                         GlobalConstants.printf(invalidMessage);
                         continue;
                     }
-                case "top middle":
+                case "top middle", "middle top":
                     if(GameObjects.gameBoard.getBoard()[0][1] == ' ') {
                         GameObjects.gameBoard.getBoard()[0][1] = player.getSymbol();
                         return;
@@ -100,7 +100,7 @@ public class GameFunctions {
                         GlobalConstants.printf(invalidMessage);
                         continue;
                     }
-                case "top right":
+                case "top right", "right top":
                     if(GameObjects.gameBoard.getBoard()[0][2] == ' ') {
                         GameObjects.gameBoard.getBoard()[0][2] = player.getSymbol();
                         return;
@@ -108,7 +108,7 @@ public class GameFunctions {
                         GlobalConstants.printf(invalidMessage);
                         continue;
                     }
-                case "middle left":
+                case "middle left", "left middle":
                     if(GameObjects.gameBoard.getBoard()[1][0] == ' ') {
                         GameObjects.gameBoard.getBoard()[1][0] = player.getSymbol();
                         return;
@@ -124,7 +124,7 @@ public class GameFunctions {
                         GlobalConstants.printf(invalidMessage);
                         continue;
                     }
-                case "middle right":
+                case "middle right", "right middle":
                     if(GameObjects.gameBoard.getBoard()[1][2] == ' ') {
                         GameObjects.gameBoard.getBoard()[1][2] = player.getSymbol();
                         return;
@@ -132,7 +132,7 @@ public class GameFunctions {
                         GlobalConstants.printf(invalidMessage);
                         continue;
                     }
-                case "bottom left":
+                case "bottom left", "left bottom":
                     if(GameObjects.gameBoard.getBoard()[2][0] == ' ') {
                         GameObjects.gameBoard.getBoard()[2][0] = player.getSymbol();
                         return;
@@ -140,7 +140,7 @@ public class GameFunctions {
                         GlobalConstants.printf(invalidMessage);
                         continue;
                     }
-                case "bottom middle":
+                case "bottom middle", "middle bottom":
                     if(GameObjects.gameBoard.getBoard()[2][1] == ' ') {
                         GameObjects.gameBoard.getBoard()[2][1] = player.getSymbol();
                         return;
@@ -148,7 +148,7 @@ public class GameFunctions {
                         GlobalConstants.printf(invalidMessage);
                         continue;
                     }
-                case "bottom right":
+                case "bottom right", "right bottom":
                     if(GameObjects.gameBoard.getBoard()[2][2] == ' ') {
                         GameObjects.gameBoard.getBoard()[2][2] = player.getSymbol();
                         return;
