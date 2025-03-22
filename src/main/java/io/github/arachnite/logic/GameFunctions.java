@@ -226,12 +226,11 @@ public class GameFunctions {
         }
     }
 
-    public static boolean endGameFunction(Player player) {
+    public static void endGameFunction(Player player) {
 
         GameObjects.gameState = GameState.ENDGAME;
         BoardConstants.printOrdinaryBoard();
         GameController.endGame(player);
-        return false;
 
     }
 
@@ -381,6 +380,50 @@ public class GameFunctions {
                     break;
 
                 }
+            case 3:
+                if(GameObjects.gameBoard.getBoard()[0][0] != ' ') {
+
+                    GameObjects.gameBoard.getBoard()[0][1] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 31;
+                    break;
+
+                } else if(GameObjects.gameBoard.getBoard()[0][1] != ' ') {
+
+                    GameObjects.gameBoard.getBoard()[0][0] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 32;
+                    break;
+
+                } else if(GameObjects.gameBoard.getBoard()[1][0] != ' ') {
+
+                    GameObjects.gameBoard.getBoard()[2][2] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 33;
+                    break;
+
+                } else if(GameObjects.gameBoard.getBoard()[1][2] != ' ') {
+
+                    GameObjects.gameBoard.getBoard()[2][2] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 34;
+                    break;
+
+                } else if(GameObjects.gameBoard.getBoard()[2][0] != ' ') {
+
+                    GameObjects.gameBoard.getBoard()[0][1] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 35;
+                    break;
+
+                } else if(GameObjects.gameBoard.getBoard()[2][1] != ' ') {
+
+                    GameObjects.gameBoard.getBoard()[0][0] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 36;
+                    break;
+
+                } else if(GameObjects.gameBoard.getBoard()[2][2] != ' ') {
+
+                    GameObjects.gameBoard.getBoard()[1][2] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 37;
+                    break;
+
+                }
             case 11:
                 if(GameObjects.gameBoard.getBoard()[2][0] == ' ') {
 
@@ -394,7 +437,6 @@ public class GameFunctions {
                     break;
 
                 }
-
             case 12:
                 if(GameObjects.gameBoard.getBoard()[2][1] == ' ') {
 
@@ -561,6 +603,58 @@ public class GameFunctions {
 
                     GameObjects.gameBoard.getBoard()[0][2] = GameObjects.player2.getSymbol();
                     GameObjects.computerTurn = 270;
+                    break;
+
+                }
+            case 31:
+                if(GameObjects.gameBoard.getBoard()[2][1] == ' ') {
+
+                    GameObjects.gameBoard.getBoard()[2][1] = GameObjects.player2.getSymbol();
+                    break;
+
+                } else {
+
+                    GameObjects.gameBoard.getBoard()[1][0] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 310;
+                    break;
+
+                }
+            case 32:
+                if(GameObjects.gameBoard.getBoard()[2][2] == ' ') {
+
+                    GameObjects.gameBoard.getBoard()[2][2] = GameObjects.player2.getSymbol();
+                    break;
+
+                } else {
+
+                    GameObjects.gameBoard.getBoard()[1][2] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 320;
+                    break;
+
+                }
+            case 33:
+                if(GameObjects.gameBoard.getBoard()[0][0] == ' ') {
+
+                    GameObjects.gameBoard.getBoard()[0][0] = GameObjects.player2.getSymbol();
+                    break;
+
+                } else {
+
+                    GameObjects.gameBoard.getBoard()[2][0] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 330;
+                    break;
+
+                }
+            case 34:
+                if(GameObjects.gameBoard.getBoard()[0][0] == ' ') {
+
+                    GameObjects.gameBoard.getBoard()[0][0] = GameObjects.player2.getSymbol();
+                    break;
+
+                } else {
+
+                    GameObjects.gameBoard.getBoard()[0][1] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 340;
                     break;
 
                 }
