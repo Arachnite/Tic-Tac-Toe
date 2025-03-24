@@ -1,9 +1,6 @@
 
 package io.github.arachnite.logic;
 
-import io.github.arachnite.util.Constants.GlobalConstants;
-import io.github.arachnite.util.Constants.BoardConstants;
-
 public class Board {
 
     private char[][] board;
