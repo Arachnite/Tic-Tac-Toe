@@ -50,7 +50,27 @@ public class Constants {
                 }
             }
 
-            GlobalConstants.printf("\n" + GameObjects.player1.getName() + ": " + GameObjects.player1.getSymbol() + "       " + GameObjects.player2.getName() + ": " + GameObjects.player2.getSymbol() + "\n");
+            GlobalConstants.printf("\n" + GameObjects.player1.getName() + ": " + GameObjects.player1.getSymbol() + "       " + GameObjects.player2.getName() + ": " + GameObjects.player2.getSymbol() + "\n\n");
+        }
+
+        public static void printOrdinaryNumbers() {
+            int count;
+            GlobalConstants.printf("\n");
+            for(int i = 0; i < 3; i++) {
+                for(int ii = 1; ii <= 3; ii++) {
+                    count = i * 3 + ii;
+                    GlobalConstants.printf("   " + count + "   ");
+                    if(ii != 3) {
+                        GlobalConstants.printf("|");
+                    }
+                }
+                GlobalConstants.printf("\n");
+                if(i != 2) {
+                    GlobalConstants.printf("-----------------------\n");
+                }
+            }
+
+            GlobalConstants.printf("\n");
         }
 
         public static void printUltimateBoard() {

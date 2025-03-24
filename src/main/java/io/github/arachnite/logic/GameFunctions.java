@@ -78,84 +78,75 @@ public class GameFunctions {
         Scanner sc = new Scanner(System.in);
         String invalidMessage = "Invalid input. Please enter a valid space.\n";
 
-        GlobalConstants.printf(player.getName() + "'s turn. Select top, middle, or bottom and left, middle or right.\nex. Top Middle\n\n");
+        GlobalConstants.printf(player.getName() + "'s turn. Select top, middle, or bottom and left, middle or right or an open number.\nex. Top Middle\n    1\n\n");
 
         while (true) {
-            String input = sc.nextLine();
+            String input = sc.nextLine().trim().toLowerCase();
 
-            switch (input.toLowerCase()) {
-                case "top left", "left top":
+            switch (input) {
+                case "top left", "left top", "1":
                     if(GameObjects.gameBoard.getBoard()[0][0] == ' ') {
                         GameObjects.gameBoard.getBoard()[0][0] = player.getSymbol();
                         return;
-                    } else {
-                        GlobalConstants.printf(invalidMessage);
-                        continue;
                     }
-                case "top middle", "middle top":
+                    GlobalConstants.printf(invalidMessage);
+                    break;
+                case "top middle", "middle top", "2":
                     if(GameObjects.gameBoard.getBoard()[0][1] == ' ') {
                         GameObjects.gameBoard.getBoard()[0][1] = player.getSymbol();
                         return;
-                    } else {
-                        GlobalConstants.printf(invalidMessage);
-                        continue;
                     }
-                case "top right", "right top":
+                    GlobalConstants.printf(invalidMessage);
+                    break;
+                case "top right", "right top", "3":
                     if(GameObjects.gameBoard.getBoard()[0][2] == ' ') {
                         GameObjects.gameBoard.getBoard()[0][2] = player.getSymbol();
                         return;
-                    } else {
-                        GlobalConstants.printf(invalidMessage);
-                        continue;
                     }
-                case "middle left", "left middle":
+                    GlobalConstants.printf(invalidMessage);
+                    break;
+                case "middle left", "left middle", "4":
                     if(GameObjects.gameBoard.getBoard()[1][0] == ' ') {
                         GameObjects.gameBoard.getBoard()[1][0] = player.getSymbol();
                         return;
-                    } else {
-                        GlobalConstants.printf(invalidMessage);
-                        continue;
                     }
-                case "middle middle":
+                    GlobalConstants.printf(invalidMessage);
+                    break;
+                case "middle middle", "5":
                     if(GameObjects.gameBoard.getBoard()[1][1] == ' ') {
                         GameObjects.gameBoard.getBoard()[1][1] = player.getSymbol();
                         return;
-                    } else {
-                        GlobalConstants.printf(invalidMessage);
-                        continue;
                     }
-                case "middle right", "right middle":
+                    GlobalConstants.printf(invalidMessage);
+                    break;
+                case "middle right", "right middle", "6":
                     if(GameObjects.gameBoard.getBoard()[1][2] == ' ') {
                         GameObjects.gameBoard.getBoard()[1][2] = player.getSymbol();
                         return;
-                    } else {
-                        GlobalConstants.printf(invalidMessage);
-                        continue;
                     }
-                case "bottom left", "left bottom":
+                    GlobalConstants.printf(invalidMessage);
+                    break;
+                case "bottom left", "left bottom", "7":
                     if(GameObjects.gameBoard.getBoard()[2][0] == ' ') {
                         GameObjects.gameBoard.getBoard()[2][0] = player.getSymbol();
                         return;
-                    } else {
-                        GlobalConstants.printf(invalidMessage);
-                        continue;
                     }
-                case "bottom middle", "middle bottom":
+                    GlobalConstants.printf(invalidMessage);
+                    break;
+                case "bottom middle", "middle bottom", "8":
                     if(GameObjects.gameBoard.getBoard()[2][1] == ' ') {
                         GameObjects.gameBoard.getBoard()[2][1] = player.getSymbol();
                         return;
-                    } else {
-                        GlobalConstants.printf(invalidMessage);
-                        continue;
                     }
-                case "bottom right", "right bottom":
+                    GlobalConstants.printf(invalidMessage);
+                    break;
+                case "bottom right", "right bottom", "9":
                     if(GameObjects.gameBoard.getBoard()[2][2] == ' ') {
                         GameObjects.gameBoard.getBoard()[2][2] = player.getSymbol();
                         return;
-                    } else {
-                        GlobalConstants.printf(invalidMessage);
-                        continue;
                     }
+                    GlobalConstants.printf(invalidMessage);
+                    break;
                 default:
                     GlobalConstants.printf(invalidMessage);
             }

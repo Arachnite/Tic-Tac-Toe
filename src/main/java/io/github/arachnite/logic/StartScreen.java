@@ -3,7 +3,7 @@ package io.github.arachnite.logic;
 
 import io.github.arachnite.util.Constants.GlobalConstants;
 import io.github.arachnite.util.Constants.StartScreenConstants;
-
+import io.github.arachnite.util.Constants.BoardConstants;
 import io.github.arachnite.util.GameMode;
 
 import java.util.Scanner;
@@ -21,6 +21,9 @@ public class StartScreen {
             executeStartMessageTwoPlayers();
 
         }
+
+        GlobalConstants.printf("\nThese are the board positions!\n");
+        BoardConstants.printOrdinaryNumbers();
     }
 
     public static void executeFirstStartMessage() {
@@ -34,7 +37,7 @@ public class StartScreen {
         GlobalConstants.printf(" ");
 
         while (true) {
-            String input = sc.nextLine();
+            String input = sc.nextLine().trim();
 
             if (input.equals("1")) {
                 GameObjects.gameBoard = new Board();
@@ -47,7 +50,7 @@ public class StartScreen {
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter 1 or 2: ");
+                GlobalConstants.printf("Invalid input. Please enter 1 or 2:  ");
             }
         }
 
@@ -56,7 +59,7 @@ public class StartScreen {
         GlobalConstants.printf(StartScreenConstants.startMessage[3] + "             ");
 
         while (true) {
-            String input = sc.nextLine();
+            String input = sc.nextLine().trim();
 
             if (input.equals("1")) {
                 GameObjects.player1.setSinglePlayer(true);
@@ -85,7 +88,7 @@ public class StartScreen {
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter 1 or 2: ");
+                GlobalConstants.printf("Invalid input. Please enter 1 or 2:  ");
             }
         }
     }
@@ -95,15 +98,15 @@ public class StartScreen {
         Scanner sc = new Scanner(System.in);
 
         //Name Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[4] + "                       ");
+        GlobalConstants.printf(StartScreenConstants.startMessage[4] + "                                ");
         GameObjects.player1.setPlayerName(sc.nextLine());
         GameObjects.player2.setPlayerName("Computer");
 
         //Symbol Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[5] + "                                          ");
+        GlobalConstants.printf(StartScreenConstants.startMessage[5] + "                              ");
 
         while(true) {
-            String input = sc.nextLine();
+            String input = sc.nextLine().trim();
 
             if (input.equalsIgnoreCase("X")) {
                 GameObjects.player1.setSymbol('X');
@@ -115,7 +118,7 @@ public class StartScreen {
                 GameObjects.player2.setSymbol('X');
                 break;
             } else {
-                GlobalConstants.printf("Invalid input. Please enter X or O: ");
+                GlobalConstants.printf("Invalid input. Please enter X or O:  ");
             }
         }
 
@@ -123,7 +126,7 @@ public class StartScreen {
         GlobalConstants.printf(StartScreenConstants.startMessage[6] + GameObjects.player1.getName() + StartScreenConstants.startMessage[7] + " ");
 
         while(true) {
-            String input = sc.nextLine();
+            String input = sc.nextLine().trim();
 
             if (input.equals("1") || input.equalsIgnoreCase(GameObjects.player1.getName())) {
                 GameObjects.player1.setFirst(true);
@@ -144,15 +147,15 @@ public class StartScreen {
         Scanner sc = new Scanner(System.in);
 
         //Name Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[8] + " ");
+        GlobalConstants.printf(StartScreenConstants.startMessage[8] + "               ");
         GameObjects.player1.setPlayerName(sc.nextLine());
-        GlobalConstants.printf(StartScreenConstants.startMessage[9] + " ");
+        GlobalConstants.printf(StartScreenConstants.startMessage[9] + "              ");
 
         while(true) {
-            String input = sc.nextLine();
+            String input = sc.nextLine().trim();
 
             if (input.equals(GameObjects.player1.getName())) {
-                GlobalConstants.printf("Invalid input. Please enter a different name: ");
+                GlobalConstants.printf("Please enter a different name:       ");
 
             } else {
                 GameObjects.player2.setPlayerName(input);
@@ -162,10 +165,10 @@ public class StartScreen {
 
 
         //Symbol Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[10] + " ");
+        GlobalConstants.printf(StartScreenConstants.startMessage[10] + "              ");
 
         while(true) {
-            String input = sc.nextLine();
+            String input = sc.nextLine().trim();
 
             if(input.equalsIgnoreCase("X")) {
                 GameObjects.player1.setSymbol('X');
@@ -178,7 +181,7 @@ public class StartScreen {
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter X or O: ");
+                GlobalConstants.printf("Invalid input. Please enter X or O:  ");
             }
         }
 
@@ -187,7 +190,7 @@ public class StartScreen {
         GlobalConstants.printf(StartScreenConstants.startMessage[11] + GameObjects.player1.getName() + " or " + GameObjects.player2.getName() + "? ");
 
         while(true) {
-            String input = sc.nextLine();
+            String input = sc.nextLine().trim();
 
             if (input.equals("1") || input.equalsIgnoreCase(GameObjects.player1.getName())) {
                 GameObjects.player1.setFirst(true);
