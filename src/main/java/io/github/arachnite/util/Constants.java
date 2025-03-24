@@ -18,8 +18,8 @@ public class Constants {
     public static class StartScreenConstants {
 
         public static final String[] startMessage = {
-                ("\nWelcome to Tic Tac Toe!"),
-                ("Please select 1 or 2 for all questions"),
+                ("\nWelcome to Tic Tac Toe!\n"),
+                ("Please select 1 or 2 for all questions\n\n"),
                 ("Tic Tac Toe or Ultimate Tic Tac Toe:"),
                 ("Computer or Two Players:"),
                 ("Name:"),
