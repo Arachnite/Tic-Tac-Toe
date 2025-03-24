@@ -212,6 +212,30 @@ public class ComputerFunctions {
                     GameObjects.computerTurn = 43;
                     break;
 
+                } else if (GameObjects.gameBoard.getBoard()[1][2] != ' ') {
+
+                    GameObjects.gameBoard.getBoard()[0][0] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 44;
+                    break;
+
+                } else if (GameObjects.gameBoard.getBoard()[2][0] != ' ') {
+
+                    GameObjects.gameBoard.getBoard()[0][0] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 45;
+                    break;
+
+                } else if (GameObjects.gameBoard.getBoard()[2][1] != ' ') {
+
+                    GameObjects.gameBoard.getBoard()[0][0] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 46;
+                    break;
+
+                } else if (GameObjects.gameBoard.getBoard()[2][2] != ' ') {
+
+                    GameObjects.gameBoard.getBoard()[0][1] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 47;
+                    break;
+
                 }
             case 11:
                 if (GameObjects.gameBoard.getBoard()[2][0] == ' ') {
@@ -525,6 +549,58 @@ public class ComputerFunctions {
                     break;
 
                 }
+            case 44:
+                if (GameObjects.gameBoard.getBoard()[2][2] == ' ') {
+
+                    GameObjects.gameBoard.getBoard()[2][2] = GameObjects.player2.getSymbol();
+                    break;
+
+                } else {
+
+                    GameObjects.gameBoard.getBoard()[0][2] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 440;
+                    break;
+
+                }
+            case 45:
+                if (GameObjects.gameBoard.getBoard()[2][2] == ' ') {
+
+                    GameObjects.gameBoard.getBoard()[2][2] = GameObjects.player2.getSymbol();
+                    break;
+
+                } else {
+
+                    GameObjects.gameBoard.getBoard()[2][1] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 450;
+                    break;
+
+                }
+            case 46:
+                if (GameObjects.gameBoard.getBoard()[2][2] == ' ') {
+
+                    GameObjects.gameBoard.getBoard()[2][2] = GameObjects.player2.getSymbol();
+                    break;
+
+                } else {
+
+                    GameObjects.gameBoard.getBoard()[2][0] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 460;
+                    break;
+
+                }
+            case 47:
+                if (GameObjects.gameBoard.getBoard()[2][1] == ' ') {
+
+                    GameObjects.gameBoard.getBoard()[2][1] = GameObjects.player2.getSymbol();
+                    break;
+
+                } else {
+
+                    GameObjects.gameBoard.getBoard()[2][0] = GameObjects.player2.getSymbol();
+                    GameObjects.computerTurn = 110;
+                    break;
+
+                }
             case 110, 120, 310:
                 if (GameObjects.gameBoard.getBoard()[1][2] == ' ') {
 
@@ -573,7 +649,7 @@ public class ComputerFunctions {
                     break;
 
                 }
-            case 170:
+            case 170, 460, 470:
                 if (GameObjects.gameBoard.getBoard()[0][2] == ' ') {
 
                     GameObjects.gameBoard.getBoard()[0][2] = GameObjects.player2.getSymbol();
@@ -669,7 +745,7 @@ public class ComputerFunctions {
                     break;
 
                 }
-            case 370, 470:
+            case 370, 430:
                 if (GameObjects.gameBoard.getBoard()[2][1] == ' ') {
 
                     GameObjects.gameBoard.getBoard()[2][1] = GameObjects.player2.getSymbol();
@@ -678,6 +754,30 @@ public class ComputerFunctions {
                 } else {
 
                     GameObjects.gameBoard.getBoard()[2][0] = GameObjects.player2.getSymbol();
+                    break;
+
+                }
+            case 440:
+                if (GameObjects.gameBoard.getBoard()[0][1] == ' ') {
+
+                    GameObjects.gameBoard.getBoard()[0][1] = GameObjects.player2.getSymbol();
+                    break;
+
+                } else {
+
+                    GameObjects.gameBoard.getBoard()[2][0] = GameObjects.player2.getSymbol();
+                    break;
+
+                }
+            case 450:
+                if (GameObjects.gameBoard.getBoard()[0][1] == ' ') {
+
+                    GameObjects.gameBoard.getBoard()[0][1] = GameObjects.player2.getSymbol();
+                    break;
+
+                } else {
+
+                    GameObjects.gameBoard.getBoard()[1][2] = GameObjects.player2.getSymbol();
                     break;
 
                 }
