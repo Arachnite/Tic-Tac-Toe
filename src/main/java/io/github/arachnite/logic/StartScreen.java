@@ -23,6 +23,11 @@ public class StartScreen {
         }
 
         GlobalConstants.printf("\nThese are the board positions!\n");
+        if(GameObjects.gameMode == GameMode.PULTIMATE || GameObjects.gameMode == GameMode.CULTIMATE) {
+            BoardConstants.printOrdinaryNumbers();
+        } else {
+            BoardConstants.printUltimateNumbers();
+        }
         BoardConstants.printOrdinaryNumbers();
     }
 

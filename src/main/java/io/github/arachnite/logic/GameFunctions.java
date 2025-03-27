@@ -19,7 +19,7 @@ public class GameFunctions {
                 GameController.initializeTurn();
                 break;
             case PULTIMATE, CULTIMATE:
-
+                BoardConstants.printUltimateBoard();
                 break;
         }
     }
