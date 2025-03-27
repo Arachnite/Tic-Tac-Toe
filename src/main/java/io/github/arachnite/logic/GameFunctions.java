@@ -13,13 +13,13 @@ public class GameFunctions {
 
         switch (GameObjects.gameMode) {
             case PORDINARY, CORDINARY:
-                BoardConstants.printOrdinaryBoard();
+                //BoardConstants.printOrdinaryBoard();
                 setOrdinaryPlace(GameObjects.player1);
                 GameObjects.gameState = GameState.POSTP1CHECK;
                 GameController.initializeTurn();
                 break;
             case PULTIMATE, CULTIMATE:
-                BoardConstants.printUltimateBoard();
+                //BoardConstants.printUltimateBoard();
                 break;
         }
     }
@@ -42,7 +42,7 @@ public class GameFunctions {
 
         switch (GameObjects.gameMode) {
             case PORDINARY:
-                BoardConstants.printOrdinaryBoard();
+                //BoardConstants.printOrdinaryBoard();
                 setOrdinaryPlace(GameObjects.player2);
                 GameObjects.gameState = GameState.POSTP2CHECK;
                 GameController.initializeTurn();
@@ -211,7 +211,7 @@ public class GameFunctions {
         if(GameObjects.gameBoard.getBoard()[0][0] != ' ' && GameObjects.gameBoard.getBoard()[0][1] != ' ' && GameObjects.gameBoard.getBoard()[0][2] != ' ' && GameObjects.gameBoard.getBoard()[1][0] != ' ' && GameObjects.gameBoard.getBoard()[1][1] != ' ' && GameObjects.gameBoard.getBoard()[1][2] != ' ' && GameObjects.gameBoard.getBoard()[2][0] != ' ' && GameObjects.gameBoard.getBoard()[2][1] != ' ' && GameObjects.gameBoard.getBoard()[2][2] != ' ') {
 
             GameObjects.gameState = GameState.ENDGAME;
-            BoardConstants.printOrdinaryBoard();
+            //BoardConstants.printOrdinaryBoard();
             GameController.tieGame();
 
         }
@@ -220,7 +220,7 @@ public class GameFunctions {
     public static void endGameFunction(Player player) {
 
         GameObjects.gameState = GameState.ENDGAME;
-        BoardConstants.printOrdinaryBoard();
+        //BoardConstants.printOrdinaryBoard();
         GameController.endGame(player);
 
     }

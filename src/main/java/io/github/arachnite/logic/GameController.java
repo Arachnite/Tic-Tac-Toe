@@ -14,7 +14,8 @@ public class GameController {
         GameObjects.player1 = new Player();
         GameObjects.player2 = new Player();
         StartScreen.executeStartMessage();
-        startGame();
+        GlobalConstants.printf(GameObjects.gameBoard.toString());
+        //startGame();
 
     }
 
@@ -50,8 +51,8 @@ public class GameController {
         Scanner sc = new Scanner(System.in);
 
         GlobalConstants.printf("\n" + player.getName() + " has won!\nWant to play again? (Y/N)\n\n");
-        String input = sc.nextLine();
-        if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
+        String input = sc.nextLine().toLowerCase();
+        if(input.equals("Y") || input.equals("Yes")) {
 
             GlobalConstants.printf("\nKeep the same settings? (Y/N)\n\n");
             input = sc.nextLine();
