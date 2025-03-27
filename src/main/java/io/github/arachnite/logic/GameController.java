@@ -8,11 +8,18 @@ import java.util.Scanner;
 
 public class GameController {
 
-    public static void startGame() {
+    public static void initiateGameData() {
+
         GameObjects.computerTurn = 0;
         GameObjects.player1 = new Player();
         GameObjects.player2 = new Player();
         StartScreen.executeStartMessage();
+        startGame();
+
+    }
+
+    public static void startGame() {
+
         if(GameObjects.player1.isFirst()) {
             GameObjects.gameState = GameState.PLAYER1TURN;
         } else {
@@ -46,8 +53,18 @@ public class GameController {
         String input = sc.nextLine();
         if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
 
-            startGame();
+            GlobalConstants.printf("\nKeep the same settings? (Y/N)\n\n");
+            input = sc.nextLine();
 
+            if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
+
+                startGame();
+
+            } else {
+
+                initiateGameData();
+
+            }
         }
     }
 
@@ -59,8 +76,18 @@ public class GameController {
         String input = sc.nextLine();
         if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
 
-            startGame();
+            GlobalConstants.printf("\nKeep the same settings? (Y/N)\n\n");
+            input = sc.nextLine();
 
+            if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
+
+                startGame();
+
+            } else {
+
+                initiateGameData();
+
+            }
         }
     }
 }
