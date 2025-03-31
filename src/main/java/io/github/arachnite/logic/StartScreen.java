@@ -1,8 +1,8 @@
 
 package io.github.arachnite.logic;
 
-import io.github.arachnite.util.Constants.GlobalConstants;
-import io.github.arachnite.util.Constants.StartScreenConstants;
+import io.github.arachnite.util.Constants.Console;
+import io.github.arachnite.util.Constants.Start;
 import io.github.arachnite.util.Constants.BoardConstants;
 import io.github.arachnite.util.GameMode;
 
@@ -22,7 +22,7 @@ public class StartScreen {
 
         }
 
-        GlobalConstants.printf("\nThese are the board positions!\n");
+        Console.print("\nThese are the board positions!\n");
         if(GameObjects.gameMode == GameMode.PULTIMATE || GameObjects.gameMode == GameMode.CULTIMATE) {
 
         } else {
@@ -37,9 +37,9 @@ public class StartScreen {
 
         //Tic Tac Toe or Ultimate Tic Tac Toe Loop
         for (int i = 0; i <= 2; i++) {
-            GlobalConstants.printf(StartScreenConstants.startMessage[i]);
+            Console.print(Start.startMessage[i]);
         }
-        GlobalConstants.printf(" ");
+        Console.print(" ");
 
         while (true) {
             String input = sc.nextLine().trim();
@@ -55,13 +55,13 @@ public class StartScreen {
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter 1 or 2:  ");
+                Console.print("Invalid input. Please enter 1 or 2:  ");
             }
         }
 
 
         //Computer or Two Players Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[3] + "             ");
+        Console.print(Start.startMessage[3] + "             ");
 
         while (true) {
             String input = sc.nextLine().trim();
@@ -93,7 +93,7 @@ public class StartScreen {
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter 1 or 2:  ");
+                Console.print("Invalid input. Please enter 1 or 2:  ");
             }
         }
     }
@@ -103,12 +103,12 @@ public class StartScreen {
         Scanner sc = new Scanner(System.in);
 
         //Name Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[4] + "                                ");
+        Console.print(Start.startMessage[4] + "                                ");
         GameObjects.player1.setPlayerName(sc.nextLine());
         GameObjects.player2.setPlayerName("Computer");
 
         //Symbol Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[5] + "                              ");
+        Console.print(Start.startMessage[5] + "                              ");
 
         while(true) {
             String input = sc.nextLine().trim();
@@ -123,12 +123,12 @@ public class StartScreen {
                 GameObjects.player2.setSymbol('X');
                 break;
             } else {
-                GlobalConstants.printf("Invalid input. Please enter X or O:  ");
+                Console.print("Invalid input. Please enter X or O:  ");
             }
         }
 
         //Turn Order Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[6] + GameObjects.player1.getName() + StartScreenConstants.startMessage[7] + " ");
+        Console.print(Start.startMessage[6] + GameObjects.player1.getName() + Start.startMessage[7] + " ");
 
         while(true) {
             String input = sc.nextLine().trim();
@@ -142,7 +142,7 @@ public class StartScreen {
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter " + GameObjects.player1.getName() + " or computer: ");
+                Console.print("Invalid input. Please enter " + GameObjects.player1.getName() + " or computer: ");
             }
         }
     }
@@ -152,15 +152,15 @@ public class StartScreen {
         Scanner sc = new Scanner(System.in);
 
         //Name Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[8] + "               ");
+        Console.print(Start.startMessage[8] + "               ");
         GameObjects.player1.setPlayerName(sc.nextLine());
-        GlobalConstants.printf(StartScreenConstants.startMessage[9] + "              ");
+        Console.print(Start.startMessage[9] + "              ");
 
         while(true) {
             String input = sc.nextLine().trim();
 
             if (input.equals(GameObjects.player1.getName())) {
-                GlobalConstants.printf("Please enter a different name:       ");
+                Console.print("Please enter a different name:       ");
 
             } else {
                 GameObjects.player2.setPlayerName(input);
@@ -170,7 +170,7 @@ public class StartScreen {
 
 
         //Symbol Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[10] + "              ");
+        Console.print(Start.startMessage[10] + "              ");
 
         while(true) {
             String input = sc.nextLine().trim();
@@ -186,13 +186,13 @@ public class StartScreen {
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter X or O:  ");
+                Console.print("Invalid input. Please enter X or O:  ");
             }
         }
 
 
         //Turn Order Loop
-        GlobalConstants.printf(StartScreenConstants.startMessage[11] + GameObjects.player1.getName() + " or " + GameObjects.player2.getName() + "? ");
+        Console.print(Start.startMessage[11] + GameObjects.player1.getName() + " or " + GameObjects.player2.getName() + "? ");
 
         while(true) {
             String input = sc.nextLine().trim();
@@ -208,7 +208,7 @@ public class StartScreen {
                 break;
 
             } else {
-                GlobalConstants.printf("Invalid input. Please enter " + GameObjects.player1.getName() + " or " + GameObjects.player2.getName() + ":");
+                Console.print("Invalid input. Please enter " + GameObjects.player1.getName() + " or " + GameObjects.player2.getName() + ":");
             }
         }
     }

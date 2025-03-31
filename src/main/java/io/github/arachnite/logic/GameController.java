@@ -2,7 +2,7 @@
 package io.github.arachnite.logic;
 
 import io.github.arachnite.util.GameState;
-import io.github.arachnite.util.Constants.GlobalConstants;
+import io.github.arachnite.util.Constants.Console;
 
 import java.util.Scanner;
 
@@ -14,9 +14,8 @@ public class GameController {
         GameObjects.player1 = new Player();
         GameObjects.player2 = new Player();
         StartScreen.executeStartMessage();
-        GlobalConstants.printf(GameObjects.gameBoard.toString());
-        //startGame();
-
+        Console.print(GameObjects.gameBoard.toString());
+        startGame();
     }
 
     public static void startGame() {
@@ -50,11 +49,11 @@ public class GameController {
 
         Scanner sc = new Scanner(System.in);
 
-        GlobalConstants.printf("\n" + player.getName() + " has won!\nWant to play again? (Y/N)\n\n");
+        Console.print("\n" + player.getName() + " has won!\nWant to play again? (Y/N)\n\n");
         String input = sc.nextLine().toLowerCase();
         if(input.equals("Y") || input.equals("Yes")) {
 
-            GlobalConstants.printf("\nKeep the same settings? (Y/N)\n\n");
+            Console.print("\nKeep the same settings? (Y/N)\n\n");
             input = sc.nextLine();
 
             if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
@@ -73,11 +72,11 @@ public class GameController {
 
         Scanner sc = new Scanner(System.in);
 
-        GlobalConstants.printf("\nTie game!\nWant to play again? (Y/N)\n\n");
+        Console.print("\nTie game!\nWant to play again? (Y/N)\n\n");
         String input = sc.nextLine();
         if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
 
-            GlobalConstants.printf("\nKeep the same settings? (Y/N)\n\n");
+            Console.print("\nKeep the same settings? (Y/N)\n\n");
             input = sc.nextLine();
 
             if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {

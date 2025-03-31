@@ -1,8 +1,6 @@
 
 package io.github.arachnite.logic;
 
-import io.github.arachnite.util.Constants;
-
 public class UltimateBoard extends Board {
 
     private Board[][] ultimateBoard;
@@ -39,14 +37,21 @@ public class UltimateBoard extends Board {
     public UltimateBoard() {
 
         ultimateBoard = new Board[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int ii = 0; ii < 3; ii++) {
+                ultimateBoard[i][ii] = new Board();
+            }
+        }
 
     }
 
     // Getters
+    @Override
     public String toString() {
-        StringBuilder returnString = new StringBuilder("\n                         |                           |                         ");
-        for(int r = 0; r < 3; r++) {
-            for(int i = 0; i < 3; i++) {
+        try {
+        StringBuilder returnString = new StringBuilder("\n                         |                           |                         \n");
+        for (int r = 0; r < 3; r++) {
+            for (int i = 0; i < 3; i++) {
                 for (int c = 0; c < 3; c++) {
                     for (int ii = 0; ii < 3; ii++) {
                         returnString.append("   ").append(ultimateBoard[r][c].getBoard()[i][ii]).append("   ");
@@ -68,10 +73,14 @@ public class UltimateBoard extends Board {
                 returnString.append("\n                         |                           |                         \n");
             }
         }
-        returnString.append("                         |                           |                         \n");
-        returnString.append("\n").append(GameObjects.player1.getName()).append(": ").append(GameObjects.player1.getSymbol()).append("       ");
+        returnString.append("\n                         |                           |                         \n");
+        returnString.append("\n").append("                            ").append(GameObjects.player1.getName()).append(": ").append(GameObjects.player1.getSymbol()).append("       ");
         returnString.append(GameObjects.player2.getName()).append(": ").append(GameObjects.player2.getSymbol()).append("\n\n");
 
         return returnString.toString();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return "";
+        }
     }
 }

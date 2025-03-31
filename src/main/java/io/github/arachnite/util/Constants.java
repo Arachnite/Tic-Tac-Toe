@@ -1,13 +1,11 @@
 
 package io.github.arachnite.util;
 
-import io.github.arachnite.logic.GameObjects;
-
 public class Constants {
 
-    public static class GlobalConstants {
+    public static class Console {
 
-        public static void printf(String x) {
+        public static void print(String x) {
 
             System.out.print(x);
 
@@ -15,7 +13,7 @@ public class Constants {
 
     }
 
-    public static class StartScreenConstants {
+    public static class Start {
 
         public static final String[] startMessage = {
                 ("\nWelcome to Tic Tac Toe!\n"),
@@ -31,46 +29,5 @@ public class Constants {
                 ("Symbol of first person:"),
                 ("Who will go first, ")
         };
-    }
-
-    public static class BoardConstants {
-
-//        public static void printOrdinaryBoard() {
-//            GlobalConstants.printf("\n");
-//            for(int i = 0; i < 3; i++) {
-//                for(int ii = 0; ii < 3; ii++) {
-//                    GlobalConstants.printf("   " + GameObjects.gameBoard.getBoard()[i][ii] + "   ");
-//                    if(ii != 2) {
-//                        GlobalConstants.printf("|");
-//                    }
-//                }
-//                GlobalConstants.printf("\n");
-//                if(i != 2) {
-//                    GlobalConstants.printf("-----------------------\n");
-//                }
-//            }
-//
-//            GlobalConstants.printf("\n" + GameObjects.player1.getName() + ": " + GameObjects.player1.getSymbol() + "       " + GameObjects.player2.getName() + ": " + GameObjects.player2.getSymbol() + "\n\n");
-//        }
-
-        public static void printOrdinaryNumbers() {
-            int count;
-            GlobalConstants.printf("\n");
-            for(int i = 0; i < 3; i++) {
-                for(int ii = 1; ii <= 3; ii++) {
-                    count = i * 3 + ii;
-                    GlobalConstants.printf("   " + count + "   ");
-                    if(ii != 3) {
-                        GlobalConstants.printf("|");
-                    }
-                }
-                GlobalConstants.printf("\n");
-                if(i != 2) {
-                    GlobalConstants.printf("-----------------------\n");
-                }
-            }
-
-            GlobalConstants.printf("\n");
-        }
     }
 }
