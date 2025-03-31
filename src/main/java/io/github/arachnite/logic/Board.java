@@ -44,7 +44,6 @@ public class Board {
                     returnString.append("|");
                 }
             }
-            returnString.append("\n");
             if (i != 2) {
                 returnString.append("\n-----------------------\n");
             }
