@@ -14,26 +14,27 @@ public class GameFunctions {
         switch (GameObjects.gameMode) {
             case PORDINARY, CORDINARY:
                 setOrdinaryPlace(GameObjects.player1);
-                GameObjects.gameState = GameState.POSTP1CHECK;
-                GameController.initializeTurn();
                 break;
             case PULTIMATE, CULTIMATE:
+                setUltimatePlace(GameObjects.player1);
                 break;
         }
+        GameObjects.gameState = GameState.POSTP1CHECK;
+        GameController.initializeTurn();
     }
 
     public static void postP1Check() {
 
+        GameObjects.gameState = GameState.PLAYER2TURN;
         switch (GameObjects.gameMode) {
             case PORDINARY, CORDINARY:
-                GameObjects.gameState = GameState.PLAYER2TURN;
                 checkOrdinaryBoard(GameObjects.player1);
-                GameController.initializeTurn();
                 break;
             case PULTIMATE, CULTIMATE:
-
+                checkUltimateBoard(GameObjects.player1);
                 break;
         }
+        GameController.initializeTurn();
     }
 
     public static void player2Turn() {
@@ -79,7 +80,7 @@ public class GameFunctions {
         Console.print(player.getName() + "'s turn. Select top, middle, or bottom and left, middle or right or an open number.\nex. Top Middle\n    1\n\n");
 
         while (true) {
-            String input = StartScreen.sc.nextLine().trim().toLowerCase();
+            String input = sc.nextLine().trim().toLowerCase();
 
             switch (input) {
                 case "top left", "left top", "1":
@@ -151,6 +152,10 @@ public class GameFunctions {
         }
     }
 
+    public static void setUltimatePlace(Player player) {
+
+    }
+
     public static void checkOrdinaryBoard(Player player) {
 
         if (player.getSymbol() == GameObjects.gameBoard.getBoard()[0][0]) {
@@ -209,16 +214,20 @@ public class GameFunctions {
         if(GameObjects.gameBoard.getBoard()[0][0] != ' ' && GameObjects.gameBoard.getBoard()[0][1] != ' ' && GameObjects.gameBoard.getBoard()[0][2] != ' ' && GameObjects.gameBoard.getBoard()[1][0] != ' ' && GameObjects.gameBoard.getBoard()[1][1] != ' ' && GameObjects.gameBoard.getBoard()[1][2] != ' ' && GameObjects.gameBoard.getBoard()[2][0] != ' ' && GameObjects.gameBoard.getBoard()[2][1] != ' ' && GameObjects.gameBoard.getBoard()[2][2] != ' ') {
 
             GameObjects.gameState = GameState.ENDGAME;
-            //BoardConstants.printOrdinaryBoard();
+            Console.print(GameObjects.gameBoard.toString());
             GameController.tieGame();
 
         }
     }
 
+    public static void checkUltimateBoard(Player player) {
+
+    }
+
     public static void endGameFunction(Player player) {
 
         GameObjects.gameState = GameState.ENDGAME;
-        //BoardConstants.printOrdinaryBoard();
+        Console.print(GameObjects.gameBoard.toString());
         GameController.endGame(player);
 
     }

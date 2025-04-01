@@ -3,8 +3,7 @@ package io.github.arachnite.logic;
 
 import io.github.arachnite.util.GameState;
 import io.github.arachnite.util.Constants.Console;
-
-import java.util.Scanner;
+import io.github.arachnite.util.Constants.sc;
 
 public class GameController {
 
@@ -15,6 +14,7 @@ public class GameController {
         GameObjects.player2 = new Player();
         StartScreen.executeStartMessage();
         startGame();
+
     }
 
     public static void startGame() {
@@ -46,34 +46,20 @@ public class GameController {
 
     public static void endGame(Player player) {
 
-        Scanner sc = new Scanner(System.in);
-
         Console.print("\n" + player.getName() + " has won!\nWant to play again? (Y/N)\n\n");
-        String input = sc.nextLine().toLowerCase();
-        if(input.equals("Y") || input.equals("Yes")) {
-
-            Console.print("\nKeep the same settings? (Y/N)\n\n");
-            input = sc.nextLine();
-
-            if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
-
-                startGame();
-
-            } else {
-
-                initiateGameData();
-
-            }
-        }
+        checkPlayAgain();
     }
 
     public static void tieGame() {
 
-        Scanner sc = new Scanner(System.in);
-
         Console.print("\nTie game!\nWant to play again? (Y/N)\n\n");
-        String input = sc.nextLine();
-        if(input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("Yes")) {
+        checkPlayAgain();
+    }
+
+    public static void checkPlayAgain() {
+
+        String input = sc.nextLine().toLowerCase();
+        if(input.equals("y") || input.equals("yes")) {
 
             Console.print("\nKeep the same settings? (Y/N)\n\n");
             input = sc.nextLine();
@@ -87,6 +73,16 @@ public class GameController {
                 initiateGameData();
 
             }
+        } else {
+
+            shutDown();
+
         }
+    }
+
+    public static void shutDown() {
+
+        sc.close();
+
     }
 }

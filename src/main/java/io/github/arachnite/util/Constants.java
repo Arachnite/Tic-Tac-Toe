@@ -1,6 +1,8 @@
 
 package io.github.arachnite.util;
 
+import java.util.Scanner;
+
 public class Constants {
 
     public static class Console {
@@ -29,5 +31,17 @@ public class Constants {
                 ("Symbol of first person:"),
                 ("Who will go first, ")
         };
+    }
+
+    public static class sc {
+        private static final Scanner scanner = new Scanner(System.in);
+
+        public static String nextLine() {
+            return scanner.nextLine();
+        }
+
+        public static void close() {
+            scanner.close();
+        }
     }
 }

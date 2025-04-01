@@ -3,13 +3,10 @@ package io.github.arachnite.logic;
 
 import io.github.arachnite.util.Constants.Console;
 import io.github.arachnite.util.Constants.Start;
+import io.github.arachnite.util.Constants.sc;
 import io.github.arachnite.util.GameMode;
 
-import java.util.Scanner;
-
 public class StartScreen {
-
-    private static final Scanner sc = new Scanner(System.in);
 
     public static void executeStartMessage() {
 
