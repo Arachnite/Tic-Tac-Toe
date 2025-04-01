@@ -11,6 +11,3 @@ public enum GameMode {
     CULTIMATE;
 
 }
-
-
-

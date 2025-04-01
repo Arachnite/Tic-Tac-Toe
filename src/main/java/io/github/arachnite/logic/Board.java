@@ -1,6 +1,8 @@
 
 package io.github.arachnite.logic;
 
+import io.github.arachnite.util.Constants.Console;
+
 public class Board {
 
     private char[][] board;
@@ -49,5 +51,15 @@ public class Board {
         returnString.append("\n").append(GameObjects.player1.getName()).append(": ").append(GameObjects.player1.getSymbol()).append("       ").append(GameObjects.player2.getName()).append(": ").append(GameObjects.player2.getSymbol()).append("\n\n");
 
         return returnString.toString();
+    }
+
+    public void printBoardNum() {
+        Console.print("\nThese are the board positions!\n");
+        Console.print("   1   |   2   |   3   \n");
+        Console.print("-----------------------\n");
+        Console.print("   4   |   5   |   6   \n");
+        Console.print("-----------------------\n");
+        Console.print("   7   |   8   |   9   ");
+        Console.print("\n");
     }
 }

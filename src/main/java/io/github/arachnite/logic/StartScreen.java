@@ -3,37 +3,38 @@ package io.github.arachnite.logic;
 
 import io.github.arachnite.util.Constants.Console;
 import io.github.arachnite.util.Constants.Start;
-import io.github.arachnite.util.Constants.BoardConstants;
 import io.github.arachnite.util.GameMode;
 
 import java.util.Scanner;
 
 public class StartScreen {
 
+    private static final Scanner sc = new Scanner(System.in);
+
     public static void executeStartMessage() {
 
         executeFirstStartMessage();
 
         if (GameObjects.player1.isSinglePlayer()) {
+
             executeStartMessageOnePlayer();
 
         } else {
+
             executeStartMessageTwoPlayers();
 
         }
 
-        Console.print("\nThese are the board positions!\n");
-        if(GameObjects.gameMode == GameMode.PULTIMATE || GameObjects.gameMode == GameMode.CULTIMATE) {
+//            if (GameObjects.gameMode == GameMode.PULTIMATE || GameObjects.gameMode == GameMode.CULTIMATE) {
+//
+//            } else {
+//
+//            }
 
-        } else {
-
-        }
-        BoardConstants.printOrdinaryNumbers();
+        GameObjects.gameBoard.printBoardNum();
     }
 
     public static void executeFirstStartMessage() {
-
-        Scanner sc = new Scanner(System.in);
 
         //Tic Tac Toe or Ultimate Tic Tac Toe Loop
         for (int i = 0; i <= 2; i++) {
@@ -100,8 +101,6 @@ public class StartScreen {
 
     public static void executeStartMessageOnePlayer() {
 
-        Scanner sc = new Scanner(System.in);
-
         //Name Loop
         Console.print(Start.startMessage[4] + "                                ");
         GameObjects.player1.setPlayerName(sc.nextLine());
@@ -148,8 +147,6 @@ public class StartScreen {
     }
 
     public static void executeStartMessageTwoPlayers() {
-
-        Scanner sc = new Scanner(System.in);
 
         //Name Loop
         Console.print(Start.startMessage[8] + "               ");

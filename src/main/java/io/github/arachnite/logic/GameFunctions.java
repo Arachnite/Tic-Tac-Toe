@@ -10,15 +10,14 @@ public class GameFunctions {
 
     public static void player1Turn() {
 
+        Console.print(GameObjects.gameBoard.toString());
         switch (GameObjects.gameMode) {
             case PORDINARY, CORDINARY:
-                GameObjects.gameBoard.toString();
                 setOrdinaryPlace(GameObjects.player1);
                 GameObjects.gameState = GameState.POSTP1CHECK;
                 GameController.initializeTurn();
                 break;
             case PULTIMATE, CULTIMATE:
-                //BoardConstants.printUltimateBoard();
                 break;
         }
     }
@@ -41,7 +40,7 @@ public class GameFunctions {
 
         switch (GameObjects.gameMode) {
             case PORDINARY:
-                GameObjects.gameBoard.toString();
+                Console.print(GameObjects.gameBoard.toString());
                 setOrdinaryPlace(GameObjects.player2);
                 GameObjects.gameState = GameState.POSTP2CHECK;
                 GameController.initializeTurn();
@@ -80,7 +79,7 @@ public class GameFunctions {
         Console.print(player.getName() + "'s turn. Select top, middle, or bottom and left, middle or right or an open number.\nex. Top Middle\n    1\n\n");
 
         while (true) {
-            String input = sc.nextLine().trim().toLowerCase();
+            String input = StartScreen.sc.nextLine().trim().toLowerCase();
 
             switch (input) {
                 case "top left", "left top", "1":

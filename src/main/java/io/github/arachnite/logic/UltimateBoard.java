@@ -83,4 +83,8 @@ public class UltimateBoard extends Board {
             return "";
         }
     }
+
+    public void printBoardNum() {
+        super.printBoardNum();
+    }
 }

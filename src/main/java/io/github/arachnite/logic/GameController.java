@@ -14,7 +14,6 @@ public class GameController {
         GameObjects.player1 = new Player();
         GameObjects.player2 = new Player();
         StartScreen.executeStartMessage();
-        Console.print(GameObjects.gameBoard.toString());
         startGame();
     }
 
