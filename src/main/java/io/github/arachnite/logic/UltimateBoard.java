@@ -4,6 +4,7 @@ package io.github.arachnite.logic;
 public class UltimateBoard extends Board {
 
     private Board[][] ultimateBoard;
+    private boolean freeTurn;
 
     /*  Ultimate Tic-Tac-Toe Board Visualization:
 
@@ -42,6 +43,7 @@ public class UltimateBoard extends Board {
                 ultimateBoard[i][ii] = new Board();
             }
         }
+        freeTurn = true;
 
     }
 
@@ -82,6 +84,13 @@ public class UltimateBoard extends Board {
             System.out.println(e.getMessage());
             return "";
         }
+    }
+
+    @Override
+    public boolean isFirstTurn() {
+
+        return freeTurn;
+
     }
 
     public void printBoardNum() {

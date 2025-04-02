@@ -1,9 +1,8 @@
 
 package io.github.arachnite.logic;
 
-import java.util.Scanner;
-
 import io.github.arachnite.util.Constants.Console;
+import io.github.arachnite.util.Constants.sc;
 import io.github.arachnite.util.GameState;
 
 public class GameFunctions {
@@ -74,9 +73,8 @@ public class GameFunctions {
     }
 
     public static void setOrdinaryPlace(Player player) {
-        Scanner sc = new Scanner(System.in);
-        String invalidMessage = "Invalid input. Please enter a valid space.\n";
 
+        String invalidMessage = "Invalid input. Please enter a valid space.\n";
         Console.print(player.getName() + "'s turn. Select top, middle, or bottom and left, middle or right or an open number.\nex. Top Middle\n    1\n\n");
 
         while (true) {
@@ -154,6 +152,17 @@ public class GameFunctions {
 
     public static void setUltimatePlace(Player player) {
 
+        if(GameObjects.gameBoard.isFirstTurn()) {
+
+        }
+
+//        String invalidMessage = "Invalid input. Please enter a valid space.\n";
+//        Console.print(player.getName() + "'s turn. Select top, middle, or bottom and left, middle or right or an open number.\nex. Top Middle\n    1\n\n");
+//
+//        while (true) {
+//            String input = sc.nextLine().trim().toLowerCase();
+//
+//        }
     }
 
     public static void checkOrdinaryBoard(Player player) {
