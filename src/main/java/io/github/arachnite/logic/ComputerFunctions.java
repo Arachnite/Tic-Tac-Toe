@@ -1695,4 +1695,8 @@ public class ComputerFunctions {
                 break;
         }
     }
+
+    public static void computerUltimateTurn() {
+
+    }
 }

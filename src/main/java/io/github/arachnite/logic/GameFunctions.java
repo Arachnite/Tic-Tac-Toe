@@ -1,9 +1,8 @@
 
 package io.github.arachnite.logic;
 
-import java.util.Scanner;
-
 import io.github.arachnite.util.Constants.Console;
+import io.github.arachnite.util.Constants.sc;
 import io.github.arachnite.util.GameState;
 
 public class GameFunctions {
@@ -43,38 +42,37 @@ public class GameFunctions {
             case PORDINARY:
                 Console.print(GameObjects.gameBoard.toString());
                 setOrdinaryPlace(GameObjects.player2);
-                GameObjects.gameState = GameState.POSTP2CHECK;
-                GameController.initializeTurn();
                 break;
             case PULTIMATE:
-
+                Console.print(GameObjects.gameBoard.toString());
+                setUltimatePlace(GameObjects.player2);
                 break;
             case CORDINARY:
                 ComputerFunctions.computerOrdinaryTurn();
-                GameObjects.gameState = GameState.POSTP2CHECK;
-                GameController.initializeTurn();
                 break;
             case CULTIMATE:
-
+                ComputerFunctions.computerUltimateTurn();
                 break;
         }
+        GameObjects.gameState = GameState.POSTP2CHECK;
+        GameController.initializeTurn();
     }
 
     public static void postP2Check() {
+
+        GameObjects.gameState = GameState.PLAYER1TURN;
         switch (GameObjects.gameMode) {
             case PORDINARY, CORDINARY:
-                GameObjects.gameState = GameState.PLAYER1TURN;
                 checkOrdinaryBoard(GameObjects.player2);
-                GameController.initializeTurn();
                 break;
             case PULTIMATE, CULTIMATE:
-
+                checkUltimateBoard(GameObjects.player2);
                 break;
         }
+        GameController.initializeTurn();
     }
 
     public static void setOrdinaryPlace(Player player) {
-        Scanner sc = new Scanner(System.in);
         String invalidMessage = "Invalid input. Please enter a valid space.\n";
 
         Console.print(player.getName() + "'s turn. Select top, middle, or bottom and left, middle or right or an open number.\nex. Top Middle\n    1\n\n");

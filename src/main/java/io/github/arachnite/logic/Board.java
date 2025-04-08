@@ -6,6 +6,7 @@ import io.github.arachnite.util.Constants.Console;
 public class Board {
 
     private char[][] board;
+    private String won;
 
     /*  Ordinary Tic-Tac-Toe Board Visualization:
 
@@ -28,10 +29,31 @@ public class Board {
 
     }
 
+    //Setters
+    public void claim(Player player) {
+
+        if(GameObjects.player1.getName().equals(player.getName())) {
+
+            won = "Player1";
+
+        } else {
+
+            won = "Player2";
+
+        }
+
+    }
+
     //Getters
     public char[][] getBoard() {
 
         return board;
+
+    }
+
+    public String hasWon() {
+
+        return won;
 
     }
 
