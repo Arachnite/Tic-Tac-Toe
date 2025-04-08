@@ -22,12 +22,6 @@ public class StartScreen {
 
         }
 
-//            if (GameObjects.gameMode == GameMode.PULTIMATE || GameObjects.gameMode == GameMode.CULTIMATE) {
-//
-//            } else {
-//
-//            }
-
         GameObjects.gameBoard.printBoardNum();
     }
 

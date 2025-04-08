@@ -73,8 +73,12 @@ public class GameFunctions {
     }
 
     public static void setOrdinaryPlace(Player player) {
+<<<<<<< HEAD
         String invalidMessage = "Invalid input. Please enter a valid space.\n";
+=======
+>>>>>>> b5b123e005ae42c87d234f2e90efe748496a42ae
 
+        String invalidMessage = "Invalid input. Please enter a valid space.\n";
         Console.print(player.getName() + "'s turn. Select top, middle, or bottom and left, middle or right or an open number.\nex. Top Middle\n    1\n\n");
 
         while (true) {
@@ -152,6 +156,17 @@ public class GameFunctions {
 
     public static void setUltimatePlace(Player player) {
 
+        if(GameObjects.gameBoard.isFirstTurn()) {
+
+        }
+
+//        String invalidMessage = "Invalid input. Please enter a valid space.\n";
+//        Console.print(player.getName() + "'s turn. Select top, middle, or bottom and left, middle or right or an open number.\nex. Top Middle\n    1\n\n");
+//
+//        while (true) {
+//            String input = sc.nextLine().trim().toLowerCase();
+//
+//        }
     }
 
     public static void checkOrdinaryBoard(Player player) {
