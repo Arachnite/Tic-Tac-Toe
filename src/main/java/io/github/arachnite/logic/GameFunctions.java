@@ -73,13 +73,9 @@ public class GameFunctions {
     }
 
     public static void setOrdinaryPlace(Player player) {
-<<<<<<< HEAD
-        String invalidMessage = "Invalid input. Please enter a valid space.\n";
-=======
->>>>>>> b5b123e005ae42c87d234f2e90efe748496a42ae
 
         String invalidMessage = "Invalid input. Please enter a valid space.\n";
-        Console.print(player.getName() + "'s turn. Select top, middle, or bottom and left, middle or right or an open number.\nex. Top Middle\n    1\n\n");
+        Console.print(player.getName() + "'s turn. Select top/middle/bottom and left/middle/right or an open number.\nex. Top Middle\n    1\n\n");
 
         while (true) {
             String input = sc.nextLine().trim().toLowerCase();
@@ -156,10 +152,6 @@ public class GameFunctions {
 
     public static void setUltimatePlace(Player player) {
 
-        if(GameObjects.gameBoard.isFirstTurn()) {
-
-        }
-
 //        String invalidMessage = "Invalid input. Please enter a valid space.\n";
 //        Console.print(player.getName() + "'s turn. Select top, middle, or bottom and left, middle or right or an open number.\nex. Top Middle\n    1\n\n");
 //
@@ -167,6 +159,96 @@ public class GameFunctions {
 //            String input = sc.nextLine().trim().toLowerCase();
 //
 //        }
+    }
+
+    public static void setUltimatePlaceFirst(Player player) {
+        String invalidMessage = "Invalid input. Please enter a valid space.\n";
+        Console.print(player.getName() + "'s turn. Select top/middle/bottom and left/middle/right twice or two open numbers.\nex. Top Middle Top Middle\n    1 1\n\n");
+
+        while (true) {
+            String input = sc.nextLine().trim().toLowerCase();
+            String firstInput = "";
+            String lastInput = "";
+
+            for(int i = 0; i <= input.length() - 1; i++) {
+                int count = 0;
+                if (input.charAt(i) == ' ') {
+                    count++;
+                    if (count == 2) {
+                        firstInput = input.substring(0, i);
+                        lastInput = input.substring(i + input.length() - 1);
+                    }
+                }
+            }
+
+            switch (firstInput) {
+                case "top left", "left top", "1":
+                    setIndividualBoard(player, 1, firstInput);
+                    break;
+                case "top middle", "middle top", "2":
+                    if (GameObjects.gameBoard.getBoard()[0][1] == ' ') {
+                        GameObjects.gameBoard.getBoard()[0][1] = player.getSymbol();
+                        return;
+                    }
+                    Console.print(invalidMessage);
+                    break;
+                case "top right", "right top", "3":
+                    if (GameObjects.gameBoard.getBoard()[0][2] == ' ') {
+                        GameObjects.gameBoard.getBoard()[0][2] = player.getSymbol();
+                        return;
+                    }
+                    Console.print(invalidMessage);
+                    break;
+                case "middle left", "left middle", "4":
+                    if (GameObjects.gameBoard.getBoard()[1][0] == ' ') {
+                        GameObjects.gameBoard.getBoard()[1][0] = player.getSymbol();
+                        return;
+                    }
+                    Console.print(invalidMessage);
+                    break;
+                case "middle middle", "5":
+                    if (GameObjects.gameBoard.getBoard()[1][1] == ' ') {
+                        GameObjects.gameBoard.getBoard()[1][1] = player.getSymbol();
+                        return;
+                    }
+                    Console.print(invalidMessage);
+                    break;
+                case "middle right", "right middle", "6":
+                    if (GameObjects.gameBoard.getBoard()[1][2] == ' ') {
+                        GameObjects.gameBoard.getBoard()[1][2] = player.getSymbol();
+                        return;
+                    }
+                    Console.print(invalidMessage);
+                    break;
+                case "bottom left", "left bottom", "7":
+                    if (GameObjects.gameBoard.getBoard()[2][0] == ' ') {
+                        GameObjects.gameBoard.getBoard()[2][0] = player.getSymbol();
+                        return;
+                    }
+                    Console.print(invalidMessage);
+                    break;
+                case "bottom middle", "middle bottom", "8":
+                    if (GameObjects.gameBoard.getBoard()[2][1] == ' ') {
+                        GameObjects.gameBoard.getBoard()[2][1] = player.getSymbol();
+                        return;
+                    }
+                    Console.print(invalidMessage);
+                    break;
+                case "bottom right", "right bottom", "9":
+                    if (GameObjects.gameBoard.getBoard()[2][2] == ' ') {
+                        GameObjects.gameBoard.getBoard()[2][2] = player.getSymbol();
+                        return;
+                    }
+                    Console.print(invalidMessage);
+                    break;
+                default:
+                    Console.print(invalidMessage);
+            }
+        }
+    }
+
+    public static void setIndividualBoard(Player player, int num, String input) {
+
     }
 
     public static void checkOrdinaryBoard(Player player) {

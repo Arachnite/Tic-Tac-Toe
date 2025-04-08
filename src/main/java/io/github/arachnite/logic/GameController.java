@@ -1,6 +1,7 @@
 
 package io.github.arachnite.logic;
 
+import io.github.arachnite.util.GameMode;
 import io.github.arachnite.util.GameState;
 import io.github.arachnite.util.Constants.Console;
 import io.github.arachnite.util.Constants.sc;
@@ -21,8 +22,16 @@ public class GameController {
 
         if(GameObjects.player1.isFirst()) {
             GameObjects.gameState = GameState.PLAYER1TURN;
+            if(GameObjects.gameMode == GameMode.CULTIMATE || GameObjects.gameMode == GameMode.PULTIMATE) {
+                GameFunctions.setUltimatePlaceFirst(GameObjects.player1);
+                GameObjects.gameState = GameState.PLAYER2TURN;
+            }
         } else {
             GameObjects.gameState = GameState.PLAYER2TURN;
+            if(GameObjects.gameMode == GameMode.CULTIMATE || GameObjects.gameMode == GameMode.PULTIMATE) {
+                GameFunctions.setUltimatePlaceFirst(GameObjects.player2);
+                GameObjects.gameState = GameState.PLAYER1TURN;
+            }
         }
         initializeTurn();
     }

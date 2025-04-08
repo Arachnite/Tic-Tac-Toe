@@ -1,8 +1,8 @@
 
 package io.github.arachnite.logic;
 
-import io.github.arachnite.util.GameMode;
 import io.github.arachnite.util.GameState;
+import io.github.arachnite.util.GameMode;
 
 public class GameObjects {
 

@@ -6,11 +6,7 @@ import io.github.arachnite.util.Constants.Console;
 public class Board {
 
     private char[][] board;
-<<<<<<< HEAD
     private String won;
-=======
-    private boolean freeTurn;
->>>>>>> b5b123e005ae42c87d234f2e90efe748496a42ae
 
     /*  Ordinary Tic-Tac-Toe Board Visualization:
 
@@ -30,7 +26,6 @@ public class Board {
                 {' ', ' ', ' '},
                 {' ', ' ', ' '}
         };
-        freeTurn = true;
 
     }
 
@@ -78,12 +73,6 @@ public class Board {
         returnString.append("\n").append(GameObjects.player1.getName()).append(": ").append(GameObjects.player1.getSymbol()).append("       ").append(GameObjects.player2.getName()).append(": ").append(GameObjects.player2.getSymbol()).append("\n\n");
 
         return returnString.toString();
-    }
-
-    public boolean isFirstTurn() {
-
-        return freeTurn;
-
     }
 
     public void printBoardNum() {
