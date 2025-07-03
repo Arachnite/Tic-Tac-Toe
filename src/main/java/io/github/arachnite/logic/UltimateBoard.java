@@ -48,7 +48,6 @@ public class UltimateBoard extends Board {
     }
 
     // Getters
-    @Override
     public String toString() {
         try {
         StringBuilder returnString = new StringBuilder("\n                         |                           |                         \n");
@@ -86,7 +85,6 @@ public class UltimateBoard extends Board {
         }
     }
 
-    @Override
     public boolean isFirstTurn() {
 
         return freeTurn;
@@ -94,6 +92,8 @@ public class UltimateBoard extends Board {
     }
 
     public void printBoardNum() {
+
         super.printBoardNum();
     }
+
 }

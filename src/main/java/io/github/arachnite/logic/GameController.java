@@ -8,6 +8,12 @@ import io.github.arachnite.util.Constants.sc;
 
 public class GameController {
 
+    public static void start() {
+
+        GameController.initiateGameData();
+
+    }
+
     public static void initiateGameData() {
 
         GameObjects.computerTurn = 0;
